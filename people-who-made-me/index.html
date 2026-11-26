@@ -1,0 +1,1129 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>The People Who Made Me II</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400&display=swap">
+<style>
+/* Layout: an editorial monograph on a grey desk. Left page is text (code, small caps, heavy sans heading), right page is one ink drawing on a tinted block with a 60-tick ruler. Wide screens turn leaves in 3D; phones swipe single pages. */
+:root{
+  --desk:#dadadc; --desk-2:#c6c6c9; --chrome:#17171a; --chrome-soft:#5c5c63;
+  --paper:#f1f1f2; --paper-2:#e3e3e5; --ink:#111113; --ink-soft:#58585f; --ink-faint:#8d8d93; --rule:#bcbcc2; --tint:#e0e0e3; --accent:#b23a30; --black:#0d0d0f;
+  --font-head:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --font-body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --ph:min(calc(100vh - 90px),860px);
+  --pw:min(calc((100vw - 28px)/2),calc(var(--ph)*.75),560px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--desk:#18181b;--desk-2:#0b0b0d;--chrome:#e9e9ec;--chrome-soft:#9b9ba3;--paper:#e9e9ea;--paper-2:#d8d8da;color-scheme:dark}}
+:root[data-theme="dark"]{--desk:#18181b;--desk-2:#0b0b0d;--chrome:#e9e9ec;--chrome-soft:#9b9ba3;--paper:#e9e9ea;--paper-2:#d8d8da;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:radial-gradient(120% 90% at 50% 40%,var(--desk),var(--desk-2));color:var(--chrome);font-family:var(--font-body);padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+#app{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.stage{perspective:2800px;display:flex;justify-content:center;width:100%}
+.book{touch-action:pan-y;user-select:none;-webkit-user-select:none;position:relative;width:calc(var(--pw)*2);height:calc(var(--pw)*4/3);transform-style:preserve-3d;transition:transform .9s cubic-bezier(.5,.1,.2,1)}
+.book::before{content:"";position:absolute;left:2%;right:2%;bottom:-3%;height:6%;background:radial-gradient(closest-side,rgba(0,0,0,.4),transparent);filter:blur(9px);z-index:-1}
+.leaf{position:absolute;top:0;left:50%;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.5,.1,.2,1)}
+.leaf.flipped{transform:rotateY(-180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--paper)}
+.face.back{transform:rotateY(180deg)}
+.page{position:relative;width:100%;height:100%;container-type:inline-size;background:linear-gradient(180deg,var(--paper),var(--paper-2));overflow:hidden;color:var(--ink)}
+.page.right{box-shadow:inset 16px 0 20px -14px rgba(0,0,0,.42)}
+.page.left{box-shadow:inset -16px 0 20px -14px rgba(0,0,0,.42)}
+.edge{position:absolute;top:0;bottom:0;z-index:3;pointer-events:none}
+.page.left>.edge{left:0;width:4.2cqw;background:linear-gradient(90deg,var(--black) 0 34%,#8f8f93 34% 100%)}
+.page.right>.edge{right:0;width:1.5cqw;background:var(--black)}
+.pn{position:absolute;bottom:4.6cqw;font:400 2cqw var(--font-mono);letter-spacing:.12em;color:var(--ink-faint)}
+.left .pn{left:12cqw}.right .pn{right:9cqw}
+.code{font:500 2.1cqw var(--font-mono);letter-spacing:.16em;text-transform:uppercase}
+.dash{display:block;width:4cqw;height:.35cqw;background:var(--ink);margin:1.6cqw 0 2.6cqw}
+/* left text page */
+.t{position:absolute;inset:0;padding:9cqw 10cqw 10cqw 12cqw;display:flex;flex-direction:column}
+.of{font:600 2.1cqw var(--font-head);letter-spacing:.22em;color:var(--ink-faint)}
+.t h2{font:800 7.2cqw/.96 var(--font-head);letter-spacing:-.01em;margin:1.2cqw 0 4.2cqw;text-wrap:balance;overflow-wrap:anywhere}
+.t h2 .blank{display:inline-block;width:46cqw;border-bottom:.8cqw solid var(--ink);height:5cqw}
+.body{flex:1;min-height:0;overflow:hidden;font-family:var(--font-body);font-weight:300;font-size:calc(var(--b,3.4cqw)*var(--s,1));line-height:1.5;color:#3a3a40}
+.body p{margin:0 0 .62em;break-inside:avoid}
+.body.one{--b:3.7cqw;max-width:68cqw}
+.body.two{--b:3.05cqw;column-count:2;column-gap:5cqw;column-fill:balance}
+.dark .body p{color:inherit}
+/* right art page */
+.blk{position:absolute;left:9cqw;top:9cqw;width:91cqw;height:88cqw;background:var(--tint)}
+.blk svg{display:block;width:100%;height:100%}
+.cap{position:absolute;left:9cqw;top:100.5cqw;right:12cqw;display:flex;justify-content:space-between;gap:3cqw;align-items:baseline}
+.cap b{font:800 2.5cqw/1.2 var(--font-head);letter-spacing:.06em;text-transform:uppercase}
+.cap span{font:400 1.9cqw var(--font-mono);letter-spacing:.12em;color:var(--ink-faint);white-space:nowrap}
+.q{position:absolute;left:9cqw;top:107.5cqw;width:68cqw;margin:0;font:300 2.55cqw/1.5 var(--font-body);letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
+.ruler{position:absolute;left:9cqw;width:76cqw;height:2.6cqw;bottom:10cqw}
+/* index */
+.idx .t{padding-top:9cqw}
+.idx .tag{font:400 2cqw/1.6 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);max-width:60cqw;margin:0 0 5cqw}
+.grid{flex:1;min-height:0;list-style:none;margin:0;padding:0;column-count:3;column-gap:4cqw;column-fill:auto;overflow:hidden;font-size:calc(2.15cqw*var(--s,1))}
+.grid li{break-inside:avoid;display:flex;gap:1.6cqw;padding:1.15cqw 0;border-top:.2cqw solid var(--rule);font-family:var(--font-head);font-weight:600;letter-spacing:.05em;line-height:1.25}
+.grid li i{font:400 .86em var(--font-mono);font-style:normal;color:var(--accent);min-width:2.6em}
+/* front matter */
+.cover{background:var(--paper)}
+.cover .scr{position:absolute;left:11cqw;top:22cqw;width:44cqw}
+.cover .ct{position:absolute;left:60cqw;top:56cqw;right:8cqw}
+.cover h1{font:600 2.7cqw/1.5 var(--font-head);letter-spacing:.26em;margin:0;white-space:nowrap}
+.cover .by{font:400 2.1cqw var(--font-mono);letter-spacing:.16em;margin-top:0}
+.cover .ct p{font:300 1.9cqw/1.6 var(--font-body);color:var(--ink-soft);margin:3cqw 0 0;max-width:30cqw}
+.cover .foot{position:absolute;left:60cqw;bottom:14cqw;font:400 1.7cqw/1.7 var(--font-mono);letter-spacing:.14em;color:var(--ink-soft)}
+.scr svg{display:block;width:100%;height:auto}
+.tp{justify-content:flex-end}
+.tp h2.big{font:800 8.2cqw/.98 var(--font-head);margin:0;max-width:66cqw}
+.tp .dash{margin-bottom:6cqw}
+.p3 .scr{position:absolute;left:14cqw;top:8cqw;width:72cqw}
+.p3 .cap{top:118cqw}
+.dark{background:var(--black);color:#eeeef0}
+.dark .dash{background:#eeeef0}
+.dark .code{color:#c9c9cf}
+.dark .pn{color:#76767d}
+.dark .scr.sm{position:absolute;left:14cqw;top:9cqw;width:22cqw}
+.pf{justify-content:flex-end;padding-bottom:12cqw}
+.pf h2{font:300 6.2cqw/1.05 var(--font-head);letter-spacing:-.01em;margin:0 0 4cqw}
+.pf .body{flex:0 1 auto;max-height:54cqw;color:#b4b4bb}
+.colo .t{justify-content:flex-end}
+.colo p{font:400 2cqw/1.8 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0}
+.backc{background:var(--black)}
+.backc .scr{position:absolute;left:34cqw;top:50cqw;width:32cqw}
+/* controls */
+.nav{display:flex;align-items:center;gap:14px;font:400 12px var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--chrome-soft)}
+.nav button{appearance:none;border:1.5px solid var(--chrome-soft);background:transparent;color:var(--chrome);width:40px;height:40px;border-radius:50%;font:500 18px var(--font-mono);cursor:pointer;line-height:1}
+.nav button:hover:not(:disabled){background:var(--chrome);color:var(--desk)}
+.nav button:disabled{opacity:.3;cursor:default}
+.nav button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.nav .hint{min-width:0;text-align:center}
+.pager{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;width:100%;padding:6px 0 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.pager::-webkit-scrollbar{display:none}
+.pager .pg{flex:0 0 var(--pw);width:var(--pw);height:calc(var(--pw)*4/3);scroll-snap-align:center;overflow:hidden;box-shadow:0 12px 28px -12px rgba(0,0,0,.55);background:var(--paper)}
+.pager .pg:first-child{margin-left:calc((100% - var(--pw))/2)}
+.pager .pg:last-child{margin-right:calc((100% - var(--pw))/2)}
+.pager .page.left,.pager .page.right{box-shadow:none}
+@media (max-width:420px){:root{--ph:auto;--pw:min(calc(100vw - 44px),calc((100vh - 130px)*.75),520px)}}
+@media (prefers-reduced-motion:reduce){.leaf,.book{transition-duration:.01s}}
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<pattern id="hat" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="5" stroke="#121214" stroke-width=".7"/></pattern>
+<pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".8" fill="#121214"/></pattern>
+<filter id="brush" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".02 .5" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="7" result="d"/><feTurbulence type="fractalNoise" baseFrequency=".6 .02" numOctaves="2" seed="9" result="m"/><feColorMatrix in="m" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.6 0 0 0 -.6" result="mask"/><feComposite in="d" in2="mask" operator="in"/></filter>
+</defs></svg>
+<div id="app"></div>
+<script>
+/* ---------- line-drawing helpers (ink, greys, one red accent) ---------- */
+const I='#121214',W='#f7f7f8',G2='#d6d6da',G3='#a9a9b0',G4='#74747c',BK='#0f0f11',RD='#b23a30';
+const ln=(d,w=1.3,c=I,x='')=>`<path d="${d}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" ${x}/>`;
+const fp=(d,f=W,w=1.3,c=I,x='')=>`<path d="${d}" fill="${f}" stroke="${c}" stroke-width="${w}" stroke-linejoin="round" ${x}/>`;
+const rc=(x,y,w,h,f=W,r=0,sw=1.3,c=I)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${f}" stroke="${c}" stroke-width="${sw}"/>`;
+const ci=(x,y,r,f='none',sw=1.3,c=I,t='')=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${f}" stroke="${c}" stroke-width="${sw}" ${t}/>`;
+const el=(x,y,rx,ry,f='none',sw=1.3,rot=0,c=I)=>`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="${f}" stroke="${c}" stroke-width="${sw}" transform="rotate(${rot} ${x} ${y})"/>`;
+const tx=(x,y,s,t,a='start',c=G4)=>`<text x="${x}" y="${y}" font-family="'IBM Plex Mono',monospace" font-size="${s}" letter-spacing=".8" fill="${c}" text-anchor="${a}">${t}</text>`;
+const pl=(x,y,s=5,c=I)=>ln(`M${x-s} ${y}H${x+s}M${x} ${y-s}V${y+s}`,1,c);
+const dim=(x1,y1,x2,y2,t='',c=G4)=>{const mx=(x1+x2)/2,my=(y1+y2)/2,v=x1===x2;return ln(`M${x1} ${y1}L${x2} ${y2}`,.9,c)+(v?ln(`M${x1-4} ${y1}H${x1+4}M${x2-4} ${y2}H${x2+4}`,.9,c):ln(`M${x1} ${y1-4}V${y1+4}M${x2} ${y2-4}V${y2+4}`,.9,c))+(t?tx(v?mx+7:mx,v?my:my-6,8,t,v?'start':'middle',c):'')};
+const HAT='url(#hat)',DOT='url(#dots)';
+/* isometric box: v = front-bottom vertex; a runs up-right, b up-left, h up */
+const iso=(x,y,a,b,h,ft=W,fl=G2,fr=G3,sw=1.2)=>{const R=[a*.866,-a*.5],L=[-b*.866,-b*.5],p=(u,v)=>`${(x+u).toFixed(1)} ${(y+v).toFixed(1)}`;
+ return fp(`M${p(0,0)}L${p(L[0],L[1])}L${p(L[0],L[1]-h)}L${p(0,-h)}Z`,fl,sw)+fp(`M${p(0,0)}L${p(R[0],R[1])}L${p(R[0],R[1]-h)}L${p(0,-h)}Z`,fr,sw)+fp(`M${p(0,-h)}L${p(R[0],R[1]-h)}L${p(R[0]+L[0],R[1]+L[1]-h)}L${p(L[0],L[1]-h)}Z`,ft,sw)};
+const cyl=(x,y,rx,h,top=W,side=G2,sw=1.2)=>fp(`M${x-rx} ${y-h}V${y}A${rx} ${rx*.5} 0 0 0 ${x+rx} ${y}V${y-h}Z`,side,sw)+el(x,y-h,rx,rx*.5,top,sw);
+const poly=(cx,cy,r,n,rot=-90,f='none',sw=1.3,c=I)=>{let d='';for(let i=0;i<n;i++){const a=(rot+i*360/n)*Math.PI/180;d+=(i?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+' '+(cy+r*Math.sin(a)).toFixed(1)}return fp(d+'Z',f,sw,c)};
+const heart=(x,y,s,f='none',sw=1.3,c=I)=>fp(`M${x} ${y} C${x-s} ${y-1.1*s} ${x-1.7*s} ${y+.5*s} ${x} ${y+1.4*s} C${x+1.7*s} ${y+.5*s} ${x+s} ${y-1.1*s} ${x} ${y}Z`,f,sw,c);
+const art=(code,inner)=>`<svg viewBox="0 0 400 400" role="img" aria-label="Line drawing ${code}">${inner}${pl(18,18)+pl(382,18)+pl(18,382)+pl(382,382)}${tx(30,22,7.5,code)}</svg>`;
+const ART={};
+const TN='#e0e0e3';
+
+const hand=(m,f)=>{const X=x=>m<0?400-x:x;const fg=[[146,330,198,316],[150,340,206,336],[150,350,202,354],[146,359,192,372]].map(([p,q,r,s])=>{const d=`M${X(p)} ${q}L${X(r)} ${s}`;return ln(d,15,I)+ln(d,12.4,f)}).join('');return fg+el(X(100),345,66,27,f,1.4,m<0?10:-10)};
+
+ART[1]=art('EM·01',
+ ci(200,215,150,'none',1,G3,'stroke-dasharray="2 6"')+
+ el(200,268,58,46,BK)+el(132,206,17,25,BK,1.3,-24)+el(172,168,17,27,BK,1.3,-8)+el(228,168,17,27,BK,1.3,8)+el(268,206,17,25,BK,1.3,24)+
+ heart(200,254,9,RD,0,RD)+
+ ln('M318 330Q330 270 316 230',1.4)+fp('M316 270Q340 262 346 244Q322 240 316 270Z',G2)+fp('M322 300Q300 296 292 278Q316 274 322 300Z',G2)+fp('M320 246Q342 236 346 214Q324 212 320 246Z',W)+
+ dim(60,356,340,356,'ø 280'));
+{let s='';for(let i=5;i>=0;i--)s+=iso(70+29.4*i,330-17*i,34,80,20+16*i,i%2?W:G2,G2,G3);
+ART[2]=art('LE·02',s+iso(200,124,22,16,6,RD,G2,G3)+ln('M40 372L330 112',1,G4,'stroke-dasharray="2 5"')+ln('M322 112H334V124',1,G4)+tx(350,380,8,'SMALL ENOUGH PIECES','end')+dim(40,330,40,226,'')) ;}
+ART[3]=art('AE·03',
+ rc(70,120,260,160.7,'none',0,1.2)+ln('M230.7 120V280.7M230.7 219.3H330M268.6 219.3V280.7M230.7 242.8H268.6',.8,G4)+
+ fp('M135 270Q112 235 130 205Q138 190 132 170H168Q162 190 170 205Q188 235 165 270Z',BK)+
+ ln('M70 280.7A160.7 160.7 0 0 1 230.7 120A99.3 99.3 0 0 1 330 219.3A61.4 61.4 0 0 1 268.6 280.7A37.9 37.9 0 0 1 230.7 242.8',2,RD)+
+ tx(70,310,9,'1 : 1.618')+dim(70,326,330,326,'')+pl(230.7,120)+pl(330,219.3)+pl(268.6,280.7));
+{const m=[];ART[4]=art('AU·04',
+ fp('M58 250V224Q60 212 96 208L146 182Q164 168 204 168H262Q292 172 306 204L332 214Q352 220 354 238V250Z',G2,1.6)+
+ fp('M108 206L150 184Q164 174 190 174V206Z',W)+fp('M198 174H258Q280 178 292 206H198Z',W)+ln('M58 228H354',.9)+
+ ci(122,252,32,BK)+ci(122,252,18,G2)+ci(122,252,5,W)+ci(292,252,32,BK)+ci(292,252,18,G2)+ci(292,252,5,W)+ci(344,232,6,RD,0)+
+ ln('M30 284H370',1,G4)+`<rect x="30" y="284" width="340" height="12" fill="${HAT}"/>`+
+ ln('M122 290V324M292 290V324',.8,G4,'stroke-dasharray="2 3"')+dim(122,324,292,324,'WHEELBASE')+tx(352,196,8,'1 : 1','end'));}
+ART[5]=art('GA·05',
+ iso(190,320,120,70,6,G2,G3,G4)+iso(190,262,120,70,6,G2,G3,G4)+iso(215,258,18,14,5,RD,G2,G3)+iso(190,204,120,70,6,W,G2,G3)+
+ ln('M294 260V144M129 285V169M190 320V204',.8,G4,'stroke-dasharray="2 4"')+ci(228,160,5,RD,0)+
+ cyl(78,170,24,12,W,G2)+ln('M66 146V108M90 146V108M66 182V218M90 182V218',1.2)+ci(330,138,14,W)+ln('M338 150V196Q338 210 326 210',1.3)+ci(346,288,12,W)+ln('M352 298V330',1.3)+
+ tx(40,372,8,'LAYER 03 / 02 / 01'));
+ART[6]=art('PA·06',
+ ln('M200 380V280C200 230 108 230 108 124',22,G2)+ln('M200 280C200 220 200 160 200 78',22,G2)+ln('M200 280C200 230 292 230 292 130',22,G2)+
+ ln('M200 380V280C200 230 108 230 108 124M200 280C200 230 292 230 292 130',1,I,'stroke-dasharray="5 4"')+
+ ln('M200 380V280C200 220 200 160 200 78',2.6,RD)+
+ ci(108,114,9,W)+ci(200,68,9,W)+ci(292,120,9,W)+tx(108,118,9,'A','middle',I)+tx(200,72,9,'B','middle',I)+tx(292,124,9,'C','middle',I)+ci(200,380,5,I,0,I)+tx(214,384,8,'NOW'));
+ART[7]=art('SP·07',
+ fp('M70 110H330Q350 110 350 130V220Q350 240 330 240H190L130 290V240H70Q50 240 50 220V130Q50 110 70 110Z',HAT,0,I,'transform="translate(9 9)"')+
+ fp('M70 110H330Q350 110 350 130V220Q350 240 330 240H190L130 290V240H70Q50 240 50 220V130Q50 110 70 110Z',W,1.6)+
+ ln('M86 150H316M86 176H290M86 202H230',2,G3)+ln('M86 202H150',2.6,RD)+
+ ln('M108 312Q130 332 158 314M94 328Q130 360 174 330M80 344Q130 388 190 346',1.2)+tx(350,300,8,'SAY IT','end'));
+ART[8]=art('OB·08',
+ ln('M200 60V340M40 200H360',.7,G3,'stroke-dasharray="2 5"')+
+ fp('M50 200Q200 78 350 200Q200 322 50 200Z',W,1.6)+ci(200,200,70,G2,1.4)+ci(200,200,70,HAT,0)+el(200,200,11,62,BK)+ci(224,176,9,W,0)+ln('M200 126V138',2.4,RD)+
+ ln('M60 330Q130 316 186 344M60 350Q130 340 176 362',1,G4)+tx(350,356,8,'SLIT 1 : 6','end'));
+ART[9]=art('TA·09',
+ rc(40,40,320,320,'none',0,1.2)+ln('M133 40V360M267 40V360M40 147H360M40 253H360',.8,G3)+
+ ci(267,147,62,G2,1.4)+ci(267,147,62,HAT,0)+rc(129,226,9,104,BK,0,0)+rc(300,290,26,26,RD,0,0)+
+ pl(133,147,6)+pl(267,147,6)+pl(133,253,6)+pl(267,253,6)+tx(48,378,8,'COMPOSITION / PROPORTION / RESTRAINT'));
+{let g='';for(let r=0;r<5;r++)for(let c=0;c<5;c++){const x=76+c*52,y=76+r*52;g+=(r===2&&c===3)?`<rect x="${x+6}" y="${y-5}" width="36" height="36" fill="${RD}" transform="rotate(8 ${x+24} ${y+13})"/>`:rc(x,y,36,36,(r+c)%2?W:G2,0,1.2)}
+let l='';for(let i=0;i<5;i++)l+=ln(`M${76+i*52} 40V370M${40} ${76+i*52}H370`,.5,G3);
+ART[10]=art('OC·10',l+g+dim(342,152,342,210,'')+tx(352,186,8,'0.8°','start',RD));}
+
+ART[11]=art('CO·11',
+ ci(185,225,98,W,1.6)+ci(185,225,84,'none',1)+fp('M278 212L378 200V220L278 238Z',G2)+
+ ci(150,208,17,RD,1.2)+ci(214,190,15,W,1.2)+ci(214,190,8,'none',1)+el(190,262,22,9,G2,1.2,-20)+el(140,252,18,8,G2,1.2,30)+ci(232,246,5,BK,0)+ci(120,232,4,BK,0)+
+ ln('M110 130Q150 80 200 96M236 110Q268 100 280 124',1.2,G4,'stroke-dasharray="3 4"')+
+ ci(320,84,32,W,1.5)+ci(320,84,26,'none',.8)+ln('M320 84V64M320 84L334 92',1.8)+rc(313,46,14,7,G2,1,1.2)+
+ fp('M40 330L160 362L162 352L46 322Z',G2)+ln('M40 330L26 326',4)+tx(350,384,8,'10 MIN','end'));
+{let c='';[[90,4],[170,3],[250,2],[322,1]].forEach(([x,n])=>{for(let j=0;j<n;j++)c+=cyl(x,340-j*10,26,10,W,G2)});
+ART[12]=art('SH·12',
+ fp('M110 190L130 110L170 150L200 96L230 150L270 110L290 190Z',G2,1.5)+rc(106,190,188,26,W,2,1.5)+ci(130,203,5,RD,0)+ci(200,203,5,I,0)+ci(270,203,5,RD,0)+ci(130,106,6,W)+ci(200,92,6,W)+ci(270,106,6,W)+
+ c+ln('M90 262Q210 190 322 300',1.2,RD,'stroke-dasharray="3 4"')+tx(40,382,8,'ENOUGH THAT YOU CAN SHARE'));}
+{let b='';for(let i=0;i<3;i++)for(let j=0;j<3;j++)b+=rc(40+i*110,50+j*100,90,80,(i+j)%2?G2:W,0,1.2)+((i*3+j)%4===0?`<rect x="${40+i*110}" y="${50+j*100}" width="90" height="80" fill="${HAT}"/>`:'');
+ART[13]=art('ST·13',b+ln('M140 372V240H250V140H140V54',2.6,RD)+ci(140,372,6,W,2,RD)+tx(154,376,8,'YOU ARE HERE')+ci(140,54,6,RD,0)+pl(250,240,5)+pl(140,140,5));}
+ART[14]=art('PR·14',
+ fp('M60 190Q200 30 340 190Q315 168 290 190Q268 168 245 190Q222 168 200 190Q178 168 155 190Q132 168 110 190Q85 168 60 190Z',G2,1.6)+
+ ln('M200 190V64M200 190Q150 112 112 178M200 190Q250 112 288 178',.8)+ln('M200 190V318Q200 350 172 350',2.2)+
+ [[70,40],[100,64],[300,60],[330,92],[44,120],[360,128],[90,230],[320,230],[60,290],[344,288]].map(([x,y])=>ln(`M${x} ${y}l-8 18`,1,G4)).join('')+
+ [150,230,262].map((x,i)=>ci(x,296,8,i===1?RD:W,1.2)+fp(`M${x-12} 352Q${x-12} 312 ${x} 308Q${x+12} 312 ${x+12} 352Z`,i===1?G3:G2,1.2)).join('')+
+ ln('M30 352H370',1,G4)+`<rect x="30" y="352" width="340" height="10" fill="${HAT}"/>`);
+ART[15]=art('PU·15',
+ ci(200,214,84,W,1.5)+ci(200,214,58,'none',1)+ci(200,214,36,G2,1)+
+ ln('M104 112V332',2.6)+ln('M94 112V158M104 112V158M114 112V158',1.6)+fp('M96 156H112Q112 176 104 180Q96 176 96 156Z',G2,1.2)+
+ fp('M298 112Q326 156 314 236V332H298Z',G2,1.3)+el(346,150,12,22,W,1.3)+ln('M346 172V332',2.4)+
+ ci(332,62,24,W,1.4)+ci(332,62,15,'none',1)+rc(40,300,34,44,G2,0,1.2)+ln('M40 316H74',.8)+
+ dim(104,364,298,364,'COVER')+ci(200,214,4,RD,0));
+ART[16]=art('LG·16',
+ [[96,150,28,36,0],[170,92,30,38,1],[246,138,26,34,0],[318,80,22,28,0],[40,86,18,24,0]].map(([x,y,rx,ry,r])=>el(x,y,rx,ry,r?RD:G2,1.4)+ln(`M${x-4} ${y+ry}h8l-4 6z`,1.2)).join('')+
+ ln('M96 192Q120 270 196 312M170 136Q190 240 204 312M246 176Q230 260 208 312',1,I)+ln('M318 110Q300 190 292 250M40 110Q50 180 66 240',1,G4,'stroke-dasharray="3 4"')+
+ rc(172,312,12,24,G2,6,1.2)+rc(188,306,12,30,G2,6,1.2)+rc(204,306,12,30,G2,6,1.2)+rc(220,312,12,24,G2,6,1.2)+
+ fp('M160 400V352Q160 334 180 330H228Q248 334 248 352V400Z',G2,1.5)+tx(40,384,8,'FORGIVE / FORGET / MOVE ON'));
+ART[17]=art('RE·17',
+ ln('M290 214Q340 214 334 252Q328 286 278 282',11,G3)+
+ fp('M110 190H290L276 300Q272 332 240 332H160Q128 332 124 300Z',W,1.6)+el(200,190,90,14,G2,1.4)+
+ ln('M170 198L190 236L168 266L196 332M240 198L224 230L252 266M190 236L224 230',3,RD)+
+ fp('M300 352L332 342L324 368Z',W)+fp('M70 352L100 346L94 370Z',W)+fp('M44 84L58 70L150 160L136 174Z',G2,1.2)+ln('M40 80L50 90',5)+tx(40,386,8,'REPAIRED, NOT REPLACED'));
+{let r='';for(let a=205;a<=335;a+=18){const f=n=>n.toFixed(1),c=Math.cos(a*Math.PI/180),s=Math.sin(a*Math.PI/180);r+=ln(`M${f(200+98*c)} ${f(150+98*s)}L${f(200+122*c)} ${f(150+122*s)}`,1.2,G4)}
+ART[18]=art('SL·18',r+heart(200,128,44,HAT,1.8)+heart(200,150,16,RD,0,RD)+
+ hand(1,G2)+hand(-1,W)+tx(200,394,8,'GIVEN, NOT NEGOTIATED','middle'));}
+ART[19]=art('HI·19',
+ ci(96,96,34,W,1.5)+ci(112,84,29,TN,0)+pl(190,70,4)+pl(260,110,4)+pl(60,190,4)+tx(300,138,28,'Z','middle',I)+tx(328,106,20,'Z','middle',I)+tx(346,82,13,'Z','middle',I)+
+ iso(232,320,150,100,26,W,G2,G3)+iso(240,296,150,74,12,G2,G3,G4)+iso(190,282,36,28,10,W,G2,G3)+ln('M40 346H370',1,G4)+`<rect x="40" y="346" width="330" height="10" fill="${HAT}"/>`);
+ART[20]=art('CF·20',
+ el(200,338,98,16,G2,1.4)+cyl(200,334,62,76,W,G2)+ln('M260 292Q304 292 300 320Q296 348 258 344',9,G3)+
+ fp('M118 186H282L232 262H168Z',W,1.5)+rc(170,262,60,10,G2,2,1.2)+ln('M200 272V300',1.4,I,'stroke-dasharray="2 4"')+
+ ln('M178 150Q166 132 180 116Q192 100 178 84M218 150Q206 132 220 116Q232 100 218 84',1.3,G4)+
+ el(64,330,15,9,BK,1,-30)+ln('M52 336L76 324',1,W)+el(336,104,15,9,BK,1,25)+ln('M324 98L348 110',1,W)+el(78,96,15,9,BK,1,10)+ln('M66 96H90',1,W)+ci(200,286,3,RD,0)+tx(40,382,8,'ORIGIN / ROAST / BREW'));
+
+{let t='';for(let i=0;i<72;i++){const a=i*5*Math.PI/180,r1=i%6?138:130,c=Math.cos(a),s=Math.sin(a);t+=ln(`M${(200+r1*c).toFixed(1)} ${(210+r1*s).toFixed(1)}L${(200+146*c).toFixed(1)} ${(210+146*s).toFixed(1)}`,.8,I)}
+ART[21]=art('EX·21',t+ci(200,210,146,'none',1.2)+ci(200,210,104,'none',.8,G3)+
+ fp('M200 80L222 210L200 340L178 210Z',W,1.2)+fp('M200 80L222 210L178 210Z',RD,1.2)+fp('M70 210L200 188L330 210L200 232Z',G2,1.2)+ci(200,210,7,W,1.4)+
+ tx(200,46,12,'N','middle',I)+tx(200,380,10,'S','middle')+tx(34,214,10,'W','middle')+tx(366,214,10,'E','middle'));}
+ART[22]=art('PV·22',
+ `<path d="M130 352H270L336 376H64Z" fill="${HAT}" stroke="${G4}" stroke-width=".8"/>`+
+ rc(118,58,164,300,'none',0,1.6)+fp('M130 70H270V350H130Z',G2,1.4)+rc(146,90,50,100,W,0,1.2)+rc(204,90,50,100,W,0,1.2)+rc(146,206,50,120,W,0,1.2)+rc(204,206,50,120,W,0,1.2)+
+ ci(254,230,6,BK,0)+ci(254,252,3,RD,0)+ln('M254 254V262',2,RD)+rc(176,126,48,26,W,2,1.2)+ln('M188 126V112M212 126V112',1)+tx(200,143,5.5,'BACK SOON','middle',I));
+ART[23]=art('LU·23',
+ fp('M90 150L130 100H270L310 150Z',G2,1.5)+fp('M90 150H310L200 330Z',W,1.5)+fp('M200 150H250L200 330Z',RD,1)+
+ ln('M170 100L150 150M230 100L250 150M200 100L170 150M200 100L230 150M200 100V150',1)+ln('M90 150L200 330M310 150L200 330M150 150L200 330M250 150L200 330',.9)+
+ dim(90,366,310,366,'8.0 mm')+dim(352,100,352,330,'')+pl(90,150,5)+pl(310,150,5)+pl(200,330,5)+tx(40,60,8,'WHAT IS WORTH HAVING'));
+ART[24]=art('JU·24',
+ rc(100,332,100,22,G2,0,1.3)+rc(200,332,100,22,G2,0,1.3)+rc(150,310,100,22,W,0,1.3)+ln('M100 354H300',1,G4)+
+ cyl(200,310,28,120,W,G2)+rc(188,160,24,34,W,0,1.3)+rc(186,146,28,14,G2,2,1.2)+ci(200,116,28,W,1.4)+ln('M188 128Q200 106 212 128',1.2)+
+ rc(172,236,56,16,RD,0,0)+ln('M180 236L176 252M192 236L188 252M204 236L200 252M216 236L212 252',1,W)+
+ ln('M214 150Q290 150 276 220Q262 280 336 300',1.5)+ln('M200 62V76M158 80L168 92M242 80L232 92M142 118H158M242 118H258',1.2,G4)+tx(40,382,8,'FOUND / BOTTLE / BRICK / TAPE'));
+ART[25]=art('SI·25',
+ rc(70,50,200,230,'none',0,1.6)+ln('M170 50V280M70 165H270',1.2)+ci(222,104,20,'none',1.2,G3)+rc(60,280,220,10,G2,0,1.3)+
+ rc(95,260,30,20,W,0,1.3)+ln('M110 260Q104 230 120 208',1.4)+fp('M120 208Q144 204 148 186Q124 188 120 208Z',G2,1.2)+
+ `<path d="M110 324H250L336 376H196Z" fill="${HAT}" stroke="${G4}" stroke-width=".8"/>`+ln('M50 324H350',1.3)+
+ fp('M120 324Q120 298 160 298H190Q230 298 230 324Z',W,1.4)+el(175,298,55,8,G2,1.2)+cyl(290,324,18,28,W,G2)+ci(175,296,3,RD,0)+tx(40,386,8,'A GOOD MEAL / A COMFORTABLE HOME'));
+{const sh=[(x,y)=>ci(x,y,32,BK,0),(x,y)=>fp(`M${x-34} ${y+30}L${x} ${y-34}L${x+34} ${y+30}Z`,G3),(x,y)=>rc(x-26,y-26,52,52,W,0,1.4).replace('/>',` transform="rotate(45 ${x} ${y})"/>`),(x,y)=>fp(`M${x-28} ${y+32}V${y-4}A28 28 0 0 1 ${x+28} ${y-4}V${y+32}Z`,BK),(x,y)=>fp(`M${x-34} ${y+34}V${y-34}A68 68 0 0 1 ${x+34} ${y+34}Z`,RD,0),(x,y)=>poly(x,y,34,6,0,G3),(x,y)=>fp(`M${x-10} ${y-34}h20v24h24v20h-24v24h-20v-24h-24v-20h24Z`,W),(x,y)=>fp(`M${x-34} ${y+10}A34 34 0 0 1 ${x+34} ${y+10}Z`,G2),(x,y)=>ci(x-16,y,16,W,1.4)+ci(x+16,y,16,BK,0)];let g='';
+sh.forEach((f,i)=>{const c=i%3,r=(i/3|0),x=100+c*100,y=100+r*100;g+=rc(50+c*100,50+r*100,100,100,(r+c)%2?W:TN,0,1.2)+f(x,y)});
+ART[26]=art('UV·26',g+tx(50,372,8,'DIFFERENT, AND BELONGING'));}
+ART[27]=art('MU·27',
+ ci(200,210,138,BK)+ci(200,210,122,'none',.6,G4)+ci(200,210,104,'none',.6,G4)+ci(200,210,86,'none',.6,G4)+ci(200,210,66,'none',.6,G4)+ci(200,210,42,RD,0)+ci(200,210,5,BK,0)+
+ ln('M92 140A120 120 0 0 1 168 94',1.4,W,'opacity=".55"')+ln('M342 70L304 84L246 196',3,I)+ci(346,66,11,W,1.4)+rc(238,190,16,26,G2,2,1.2).replace('/>',' transform="rotate(25 246 203)"/>')+
+ ln('M36 170Q20 210 36 250M20 150Q-4 210 20 270',1.2)+tx(40,386,8,'33 1/3 RPM'));
+ART[28]=art('BO·28',
+ iso(214,334,150,104,24,W,G2,G3)+iso(208,310,134,96,20,G2,G3,G4)+iso(218,290,118,84,22,W,G2,G3)+iso(210,268,108,76,16,G3,G4,BK)+iso(206,252,96,70,14,RD,G3,G4)+
+ ln('M236 252V224Q240 214 236 206',1.2)+ln('M40 354H370',1,G4)+tx(40,386,8,'ENTER SOMEONE ELSE\'S WORLD'));
+{let b='',R=[34.6,-20],L=[-34.6,-20];const P=(i,j)=>[200+i*R[0]+j*L[0],330+i*R[1]+j*L[1]],f=n=>n.toFixed(1);
+for(let i=0;i<4;i++)for(let j=0;j<4;j++){const a=P(i,j),c=P(i+1,j),d=P(i+1,j+1),e=P(i,j+1);b+=fp(`M${f(a[0])} ${f(a[1])}L${f(c[0])} ${f(c[1])}L${f(d[0])} ${f(d[1])}L${f(e[0])} ${f(e[1])}Z`,(i+j)%2?BK:W,1)}
+const px=165,py=250;
+ART[29]=art('GM·29',b+ci(px,py-64,11,W,1.4)+fp(`M${px-8} ${py-52}H${px+8}L${px+12} ${py-14}H${px-12}Z`,G2,1.4)+el(px,py-8,20,7,G2)+
+ iso(260,270,26,26,26,W,G2,G3)+ci(260,231,2.6,RD,0)+ci(253,227,2.2,BK,0)+ci(267,235,2.2,BK,0)+tx(40,386,8,'STRATEGY / PATIENCE / LUCK'));}
+ART[30]=art('LI·30',
+ fp('M240 90C312 84 346 170 312 244C296 278 288 306 258 330C230 350 190 334 196 296',W,1.6)+
+ ln('M250 130C292 130 308 184 284 232C272 258 262 270 246 280',1.6)+ln('M240 170C262 170 268 206 252 230',1.4)+ci(232,222,6,RD,0)+
+ ln('M150 160Q130 210 150 260M120 140Q92 210 120 280M90 120Q54 210 90 300',1.2)+ci(60,210,3,BK,0)+tx(40,372,8,'HOW WAS YOUR DAY?'));
+
+ART[31]=art('GI·31',
+ hand(1,G2)+hand(-1,W)+
+ iso(200,266,50,50,40,RD,G2,G3)+ln('M200 170V130M186 142L200 128L214 142',1.2,G4)+tx(40,386,8,'TIME / MONEY / KNOWLEDGE / PRESENCE'));
+{let r='';for(let a=180;a<=360;a+=15){const f=n=>n.toFixed(1),c=Math.cos(a*Math.PI/180),s=Math.sin(a*Math.PI/180),k=(a/15)%2?16:32;r+=ln(`M${f(200+106*c)} ${f(260+106*s)}L${f(200+(106+k)*c)} ${f(260+(106+k)*s)}`,1.3,I)}
+ART[32]=art('HA·32',r+ci(200,260,90,W,1.6)+ci(200,260,90,HAT,0)+`<rect x="40" y="260" width="320" height="130" fill="${TN}"/>`+ln('M30 260H370',1.4)+`<rect x="30" y="268" width="340" height="9" fill="${HAT}"/>`+
+ ln('M310 330V298',1.4)+fp('M310 312Q334 306 338 288Q316 290 310 312Z',G2)+fp('M310 322Q288 318 282 302Q304 302 310 322Z',W)+cyl(100,340,18,26,W,G2)+ci(200,260,4,RD,0)+tx(40,386,8,'NOTICING WHAT IS ALREADY GOOD'));}
+{let r='';for(let i=0;i<16;i++){const a=i*22.5*Math.PI/180,c=Math.cos(a),s=Math.sin(a),f=n=>n.toFixed(1),x2=i===0?62:84;r+=(i===0?ln(`M${f(200+176*c)} ${f(200+176*s)}L${f(200+x2*c)} ${f(200+x2*s)}`,2.4,RD):ln(`M${f(200+(150+(i%3)*14)*c)} ${f(200+(150+(i%3)*14)*s)}L${f(200+x2*c)} ${f(200+x2*s)}`,1,G4,i%2?'stroke-dasharray="3 4"':'')+ln(`M${f(200+x2*c-5*s)} ${f(200+x2*s+5*c)}L${f(200+(x2+10)*c)} ${f(200+(x2+10)*s)}L${f(200+x2*c+5*s)} ${f(200+x2*s-5*c)}`,.9,G4))}
+ART[33]=art('IG·33',r+ci(200,200,62,W,1.6)+ci(200,200,62,HAT,0)+ln('M176 196Q188 204 200 196M200 196Q212 204 224 196',1.4)+tx(40,386,8,'NOT EVERYTHING DESERVES ACCESS'));}
+{const D='M168 70C214 58 252 92 252 138L266 176L250 184C256 204 248 214 252 232C256 258 236 278 214 282L208 340H132V280C104 262 100 214 114 168C124 118 130 84 168 70Z';let w='';for(let r=10;r<=130;r+=13)w+=el(190,176,r,r*.82,'none',1,-10);
+ART[34]=art('PE·34',`<defs><clipPath id="cp34"><path d="${D}"/></clipPath></defs><g clip-path="url(#cp34)">${w}</g>`+fp(D,'none',1.8)+ci(224,126,4,RD,0)+ln('M262 100Q300 110 320 150M270 70Q330 80 352 150',1,G4,'stroke-dasharray="2 5"')+tx(40,386,8,'STILL BECOMING'));}
+ART[35]=art('FU·35',
+ ci(150,200,62,G2,1.4)+`<circle cx="150" cy="200" r="68" fill="none" stroke="${I}" stroke-width="12" stroke-dasharray="12.2 9.2"/>`+ci(150,200,50,'none',1)+ci(150,200,14,TN,1.3)+ln('M150 150V250M100 200H200',1,G4)+
+ ci(247,268,44,W,1.4)+`<circle cx="247" cy="268" r="50" fill="none" stroke="${I}" stroke-width="12" stroke-dasharray="12.7 9.7"/>`+ci(247,268,28,'none',1)+ci(247,268,9,RD,0)+
+ dim(60,356,340,356,'FORM + FUNCTION')+tx(40,60,8,'DOES IT DO WHAT IT IS SUPPOSED TO DO?'));
+ART[36]=art('AF·36',
+ rc(96,88,208,92,W,0,1.2)+ln('M112 112H250M112 128H220',1.4,G3)+tx(112,160,9,'I THOUGHT OF YOU.','start',I)+
+ rc(60,130,280,180,W,2,1.6)+ln('M60 130L200 240L340 130',1.4)+ln('M60 310L170 222M340 310L230 222',1)+heart(200,226,12,RD,0,RD)+tx(40,356,8,'I REMEMBERED / I CARE'));
+ART[37]=art('NE·37',
+ ci(160,200,96,'none',1.6)+ci(240,200,96,'none',1.6)+`<path d="M200 112.7A96 96 0 0 1 200 287.3A96 96 0 0 1 200 112.7Z" fill="${RD}" stroke="${I}" stroke-width="1.4"/>`+
+ tx(112,204,16,'A','middle',I)+tx(288,204,16,'B','middle',I)+tx(200,204,8,'BOTH','middle',W)+ln('M64 330H336',1,G4)+pl(200,330,5)+tx(40,372,8,'COMPROMISE POSITIONS, NOT PRINCIPLES'));
+{let b='';for(let i=0;i<12;i++){const a=i*30*Math.PI/180;b+=ci((200+111*Math.cos(a)).toFixed(1),(200+111*Math.sin(a)).toFixed(1),4,BK,0)}
+ART[38]=art('SE·38',ci(200,200,140,G2,1.6)+ci(200,200,122,W,1.2)+ci(200,200,100,'none',.8)+b+ln('M200 126V274M126 200H274',7,I)+ln('M148 148L252 252M252 148L148 252',3,G3)+ci(200,200,24,W,1.6)+ci(200,196,6,RD,0)+ln('M200 198V212',3,RD)+tx(40,386,8,'SAFE ENOUGH TO TELL'));}
+ART[39]=art('HO·39',
+ [[150,96],[250,96],[150,304],[250,304],[78,200],[322,200],[200,304]].map(([x,y])=>ci(x,y,18,G2,1.3)).join('')+ci(200,96,18,'none',1.5,RD,'stroke-dasharray="3 3"')+
+ rc(110,130,180,140,W,6,1.6)+[[150,160],[250,160],[150,240],[250,240]].map(([x,y])=>ci(x,y,18,W,1.2)+ci(x,y,10,'none',.8)).join('')+rc(184,188,32,24,G2,3,1.2)+ci(200,200,3,RD,0)+tx(40,372,8,'ROOM FOR ONE MORE'));
+{const it=[(x,y)=>ci(x,y,14,G2,1.3),(x,y)=>fp(`M${x-14} ${y+12}L${x} ${y-14}L${x+14} ${y+12}Z`,G3),(x,y)=>rc(x-12,y-12,24,24,W,0,1.3),(x,y)=>el(x,y,20,10,G3,1.3),(x,y)=>poly(x,y,16,5),(x,y)=>cyl(x,y+10,12,18,W,G2),(x,y)=>iso(x,y+14,18,18,16,W,G2,G3),(x,y)=>ci(x,y,16,'none',1.3)+ci(x,y,7,BK,0),(x,y)=>poly(x,y,16,6,0,G2),(x,y)=>fp(`M${x-18} ${y}L${x} ${y-14}L${x+18} ${y}L${x} ${y+14}Z`,W),(x,y)=>heart(x,y-6,8,RD,0,RD),(x,y)=>ln(`M${x-16} ${y}Q${x-8} ${y-12} ${x} ${y}T${x+16} ${y}`,2)];let g=rc(70,60,260,280,W,0,1.8)+ln('M156.7 60V340M243.3 60V340M70 130H330M70 200H330M70 270H330',1.2);
+it.forEach((f,i)=>{g+=f(113.3+(i%3)*86.7,95+(i/3|0)*70)});
+ART[40]=art('CL·40',g+tx(70,366,8,'THE STORY BEHIND AN OBJECT'));}
+
+ART[41]=art('DR·41',
+ ln('M200 98V86Q200 72 214 72Q228 72 228 60Q228 46 212 46',1.8)+fp('M200 98L80 156H320Z','none',1.6)+
+ fp('M120 156L96 192L124 214L140 198V332H260V198L276 214L304 192L280 156Q240 178 200 178Q160 178 120 156Z',W,1.6)+ln('M170 162L200 192L230 162M200 192V332',1.2)+ci(200,214,2.6,BK,0)+ci(200,250,2.6,BK,0)+ci(200,286,2.6,BK,0)+
+ rc(40,332,28,28,G2,0,1.2)+rc(72,332,28,28,HAT,0,1.2)+rc(104,332,28,28,RD,0,0)+tx(150,350,8,'A COLOUR / A FIT','start'));
+ART[42]=art('MI·42',
+ ci(200,188,46,'none',1.6)+ln('M60 290H340',1.4)+ci(268,188,5,RD,0)+pl(60,290,5)+pl(340,290,5)+dim(60,330,340,330,'')+tx(60,356,8,'LESS, BUT INTENTIONAL'));
+ART[43]=art('GR·43',
+ `<path d="M236 40L360 40L392 346L268 346Z" fill="${HAT}" opacity=".55"/>`+
+ rc(122,150,12,108,W,0,1.4)+ln('M134 176H178M134 206H178',1.2)+rc(120,256,140,12,W,2,1.5)+rc(126,268,10,76,W,0,1.4)+rc(244,268,10,76,W,0,1.4)+
+ ln('M40 346H370',1.3)+rc(300,298,20,48,W,0,1.4)+fp('M310 294Q298 278 310 260Q322 278 310 294Z',RD,0)+tx(40,386,8,'CARRY THEIR LOVE WITH YOU'));
+{let s='';for(let x=140;x<=260;x+=20){const y=206-94*(1-((x-200)/83)**2);s+=ln(`M${x} ${y.toFixed(1)}V280`,.9,x===200?RD:I,x===200?'stroke-width="2.2"':'')}
+ART[44]=art('TR·44',s+ln('M30 280H370',2.4)+rc(110,108,14,176,W,0,1.4)+rc(276,108,14,176,W,0,1.4)+ln('M30 238Q60 238 117 112Q200 300 283 112Q340 238 370 238',1.6)+ln('M30 330H370',1,G4)+`<rect x="30" y="330" width="340" height="10" fill="${HAT}"/>`+tx(40,372,8,'BUILT THROUGH CONSISTENCY'));}
+{let k='';for(let i=0;i<=32;i++)k+=ln(`M${48+i*9.5} 170V${i%4?178:184}`,.8);
+ART[45]=art('TH·45',k+rc(40,170,320,56,G2,6,1.6).replace('fill="#d6d6da"','fill="#d6d6da" fill-opacity=".9"')+rc(150,184,100,28,W,14,1.4)+el(200,198,12,8,RD,0)+ln('M184 184V212M216 184V212',1)+ln('M200 226V326',1.2)+fp('M200 322L188 340L200 372L212 340Z',BK)+tx(40,386,8,'LEVEL / PLUMB / TRUE'));}
+{let q='';for(let i=0;i<16;i++)q+=`<rect x="${200-145+i*9}" y="${200-145+i*9}" width="${290-i*18}" height="${290-i*18}" fill="none" stroke="${I}" stroke-width=".9" transform="rotate(${i*5} 200 200)"/>`;
+ART[46]=art('OB·46',q+`<rect x="192" y="192" width="16" height="16" fill="${RD}" transform="rotate(80 200 200)"/>`+tx(40,386,8,'ONE MORE QUESTION'));}
+{let l='';for(let y=340;y>=100;y-=20)l+=ln(`M290 ${y}H312`,1.2);
+ART[47]=art('SH·47',l+ln('M290 340V96M312 340V96',1.5)+
+ ln('M120 70L170 112L214 62L252 122L332 50',.9,G4,'stroke-dasharray="2 4"')+[[120,70],[170,112],[252,122],[332,50]].map(([x,y])=>ci(x,y,3.4,BK,0)).join('')+ci(214,62,5,RD,0)+
+ fp('M130 340V304L180 266L230 304V340Z',W,1.5)+rc(170,312,20,28,G2,0,1.2)+ln('M40 340H370',1.3)+`<rect x="40" y="340" width="330" height="10" fill="${HAT}"/>`+tx(40,386,8,'SIMPLE LIVING / HIGH THINKING'));}
+{let n='',f=v=>v.toFixed(1);for(let i=0;i<8;i++){const a=(i*45-90)*Math.PI/180,x=200+128*Math.cos(a),y=200+128*Math.sin(a),a2=((i+1)*45-90)*Math.PI/180;n+=ln(`M${f(x)} ${f(y)}L200 200`,.9,G4)+ln(`M${f(x)} ${f(y)}A128 128 0 0 1 ${f(200+128*Math.cos(a2))} ${f(200+128*Math.sin(a2))}`,.8,G3,'stroke-dasharray="2 4"')}
+for(let i=0;i<8;i++){const a=(i*45-90)*Math.PI/180;n+=ci(f(200+128*Math.cos(a)),f(200+128*Math.sin(a)),i%3?12:16,W,1.4)}
+ART[48]=art('GT·48',n+ci(200,200,24,RD,0)+ln('M226 200H382M368 190L382 200L368 210',1.8,RD)+tx(40,386,8,'REMEMBERING WHO HELPED'));}
+ART[49]=art('PH·49',
+ fp('M120 134L140 102H200L220 134Z',G2,1.5)+rc(60,130,280,190,W,12,1.7)+rc(256,150,50,26,G2,3,1.2)+rc(262,112,26,20,G2,2,1.3)+ci(78,160,5,RD,0)+
+ ci(190,228,66,G2,1.6)+ci(190,228,52,W,1.3)+ci(190,228,36,BK)+ci(190,228,14,G2,1)+ci(204,214,6,W,0)+
+ ln('M30 50H66M30 50V86M370 50H334M370 50V86M30 372H66M30 372V336M370 372H334M370 372V336',2)+tx(40,392,8,'THE LIGHT / THE EXPRESSION / THE DETAILS'));
+ART[50]=art('ME·50',
+ `<path d="M114 190L350 262L190 332Z" fill="${HAT}" opacity=".5"/>`+
+ fp('M60 340V300H120V270H180V240H240V210H300V180H360V340Z',G2,1.5)+
+ ln('M94 172V162Q101 150 108 162V172',1.4)+rc(88,172,26,40,W,2,1.4)+ci(101,194,5,RD,0)+ln('M101 212V236',1.4)+ci(101,246,8,W,1.3)+
+ el(150,256,5,9,BK,0,-20)+el(164,250,5,9,BK,0,-20)+el(210,226,5,9,BK,0,-20)+el(224,220,5,9,BK,0,-20)+
+ tx(40,386,8,'GUIDANCE, NOT A COPY OF YOU'));
+
+{let t='',sp='M190 190';for(let i=0;i<12;i++){const a=i*30*Math.PI/180,c=Math.cos(a),s=Math.sin(a);t+=ln(`M${(190+94*c).toFixed(1)} ${(190+94*s).toFixed(1)}L${(190+104*c).toFixed(1)} ${(190+104*s).toFixed(1)}`,1.2)}
+for(let d=0;d<=1080;d+=20){const r=2+d*.07,a=d*Math.PI/180;sp+=`L${(190+r*Math.cos(a)).toFixed(1)} ${(190+r*Math.sin(a)).toFixed(1)}`}
+ART[51]=art('PO·51',ci(190,190,110,W,1.6)+t+ln(sp,1,G4)+ln('M190 190V112',2.6)+ln('M190 190L246 222',1.8)+ci(190,190,5,RD,0)+
+ iso(330,372,56,40,5,W,G2,G3)+iso(330,362,56,40,5,W,G2,G3)+iso(330,352,56,40,5,RD,G2,G3)+cyl(64,372,22,28,W,G2)+tx(40,390,8,'FIRST, COFFEE.')+tx(360,330,8,'LATER','end'));}
+ART[52]=art('CR·52',
+ rc(30,250,120,112,G2,0,1.5)+rc(270,250,100,112,G2,0,1.5)+`<rect x="150" y="250" width="120" height="112" fill="${HAT}"/>`+
+ rc(158,284,30,10,W,0,1.3)+rc(198,304,30,10,RD,0,1.3)+rc(236,286,26,10,W,0,1.3)+
+ ci(106,230,7,W,1.3)+fp('M96 250Q96 238 106 238Q116 238 116 250Z',G3,1.2)+ln('M116 226Q200 150 292 240M282 232L292 240L280 244',1.3,RD,'stroke-dasharray="3 4"')+tx(40,390,8,'THE NEXT STEP'));
+ART[53]=art('AP·53',
+ rc(70,150,170,90,'none',45,13)+rc(160,150,170,90,'none',45,13,RD)+ln('M200 150H220M200 240H220',13,I)+
+ tx(200,310,18,'I WAS WRONG.','middle',I)+ln('M130 326H270',1,G4)+tx(200,350,8,'THE BEGINNING OF MAKING IT RIGHT','middle'));
+ART[54]=art('HU·54',
+ ci(200,190,110,W,1.6)+ln('M150 168Q166 146 182 168M218 168Q234 146 250 168',2.6)+fp('M140 214Q200 300 260 214Z',BK,1.4)+el(200,252,24,11,RD,0)+
+ tx(334,112,18,'HA','middle',I)+tx(358,146,12,'HA','middle',I)+tx(56,120,13,'HA','middle',I)+tx(40,386,8,'THE ABSURDITY OF BEING HUMAN'));
+{let s='';[3,4,5,6,8,24].forEach((n,i)=>{const x=62+i*55;s+=poly(x,200,24,n,-90,i===5?RD:(i%2?G2:W),1.4)+ln(`M${x} 270V278`,1)+tx(x,296,8,'V'+(i+1),'middle')});
+ART[55]=art('RI·55',s+ln('M40 270H360',1.2)+ln('M62 150Q200 80 338 150M326 142L338 150L324 158',1.2,G4,'stroke-dasharray="3 4"')+tx(40,386,8,'GROWTH MEANS ALLOWING YOURSELF TO CHANGE'));}
+ART[56]=art('GF·56',
+ iso(200,300,140,140,90,W,G2,G3)+ln('M260.6 175L139.5 105M139.5 175L260.5 105',12,RD)+ln('M139.5 175V262M260.6 175V262',12,RD)+
+ el(172,124,28,14,'none',2.6,-18,RD)+el(228,124,28,14,'none',2.6,18,RD)+ci(200,132,6,RD,0)+
+ fp('M300 262L334 274L322 306L288 294Z',W,1.2)+ln('M296 276L308 266',1)+tx(40,386,8,'I REMEMBERED. I PAID ATTENTION.'));
+{let p='';for(let a=0;a<360;a+=20){if(a>=330||a<=20)continue;const c=Math.cos(a*Math.PI/180),s=Math.sin(a*Math.PI/180);p+=ln(`M${(200+124*c).toFixed(1)} ${(200+124*s).toFixed(1)}L${(200+138*c).toFixed(1)} ${(200+138*s).toFixed(1)}`,2)}
+ART[57]=art('BD·57',p+ci(200,200,131,'none',1.2,I,'stroke-dasharray="6 5"')+ci(200,184,14,W,1.4)+fp('M176 252Q176 208 200 204Q224 208 224 252Z',G2,1.4)+ci(331,200,4,RD,0)+ln('M331 200L376 166',2.6,RD)+tx(200,300,8,'YES','middle')+tx(200,316,8,'NO','middle',RD)+tx(40,386,8,'CARING WITHOUT LOSING YOURSELF'));}
+{const lf=(x,y,d)=>fp(`M${x} ${y}q${14*d} -4 ${18*d} -20q${-16*d} 2 ${-18*d} 20Z`,G2,1.1);let s=ci(60,296,5,BK,0)+ln('M130 300V276',1.5)+lf(130,284,1)+ln('M200 300V240',1.5)+lf(200,270,1)+lf(200,256,-1)+ln('M270 300V196',1.5)+lf(270,284,1)+lf(270,262,-1)+lf(270,240,1)+lf(270,220,-1)+ln('M340 300V150',1.5)+lf(340,286,1)+lf(340,262,-1)+lf(340,236,1)+ci(340,140,10,RD,0)+[0,90,180,270].map(a=>el(340+17*Math.cos(a*Math.PI/180),140+17*Math.sin(a*Math.PI/180),9,5,W,1.2,a)).join('');
+let k='';for(let i=0;i<=32;i++)k+=ln(`M${40+i*10} 330V${i%4?334:340}`,.8);
+ART[58]=art('PT·58',s+ln('M30 300H370',1.3)+ln('M40 330H360',1.2)+k+[60,130,200,270,340].map((x,i)=>tx(x,358,8,'T'+i,'middle')).join('')+tx(40,386,8,'SOMETHING IS HAPPENING')+pl(30,300,4)+pl(370,300,4));}
+{let w='';for(let k=-4;k<=4;k++){const y=220+k*22,d=Math.sign(k)*(64-Math.abs(k)*10);if(k===0)continue;w+=ln(`M20 ${y}C110 ${y} 150 ${y+d} 220 ${y+d}S330 ${y} 380 ${y}`,1.1,G4)}
+ART[59]=art('AC·59',w+fp('M150 270L170 190L230 170L286 210L290 270Z',G2,1.6)+`<path d="M150 270L170 190L230 170L286 210L290 270Z" fill="${HAT}"/>`+ln('M20 220H138M126 212L138 220L126 228',2.2,RD)+tx(40,386,8,'WHAT I CAN CHANGE / WHAT I CANNOT'));}
+ART[60]=art('__·60',
+ `<rect x="70" y="70" width="260" height="260" fill="none" stroke="${G4}" stroke-width="1.2" stroke-dasharray="6 5"/>`+pl(70,70,6)+pl(330,70,6)+pl(70,330,6)+pl(330,330,6)+
+ tx(200,186,10,'THE ART OF','middle')+ln('M130 214H270',1.6)+rc(132,192,2.4,24,RD,0,0)+tx(40,386,8,'SOMEONE WILL LEAVE ANOTHER LITTLE PIECE'));
+
+const PP=[
+['Empathy','NOTICE / AWARE / CARE','Kindness is not about being soft. It is about being aware.',`This person taught me empathy.
+Not just empathy towards people, but towards animals, pets, and nature.
+They made me understand that love doesn’t always need words. Sometimes it is simply noticing that something is hungry, frightened, tired, lonely, or unable to speak for itself.
+Perhaps that is where I learnt that kindness is not about being soft.
+It is about being aware.`],
+['Learning','TRY / FAIL / TRY AGAIN','Trying again. And eventually figuring out what I actually love.',`Who taught me the art of studying, learning and acquiring knowledge by myself.
+They taught me about ambition, aspirations, education and knowledge—but also about trying.
+Trying different things.
+Making mistakes.
+Changing direction.
+Trying again.
+And eventually figuring out what I actually love.
+They also taught me something about being an educator:
+You cannot teach someone by showing them how much you know.
+You influence someone when you can take something complicated and break it down into small enough pieces for a complete amateur to understand.
+That is when knowledge actually becomes powerful.`],
+['Aestheticism','ART / DESIGN / IDENTITY','Some things are meant to be lived rather than displayed.',`Aestheticism combines art, design, and a philosophy of appreciating beauty.
+This person taught me about art and design—not merely as professions, but as ways of living.
+They showed me how aesthetics, creativity, principles, and personal identity can become part of everyday life.
+But perhaps the bigger lesson was about owning who you are.
+They also made me question something deeper about faith.
+Not how much you show it.
+Not how loudly you speak about it.
+But how deeply you feel it.
+I learnt that some things are meant to be lived rather than displayed.`],
+['Automobiles','MACHINE / FORM / CURIOSITY','How does this work? Why was it made this way? Who thought of this?',`My grandfather.
+He gave me my love for automobiles.
+Perhaps it started with the machines themselves—the shapes, the sounds, the mechanisms, the details.
+But looking back, I think it was also about fascination.
+The ability to look at an object and wonder:
+How does this work? Why was it made this way? Who thought of this?
+That curiosity stayed.`],
+['Gadgets','DEVICE / INTERFACE / DETAIL','Not simply for what it does, but for how it works.',`This person made me a gadget geek.
+They taught me to be fascinated by technology—not simply for what it does, but for how it works.
+New devices. New interfaces. New possibilities.
+I learnt to notice the little things: the buttons, the materials, the sounds, the interaction, the experience.
+Perhaps this was one of the earliest places where my love for technology and design began to overlap.`],
+['Choosing a Path','ADVICE / DIRECTION / CAREER','One sentence, given at the right moment, can alter the architecture of an entire life.',`This person told me to pursue Industrial Product Design.
+Sometimes another person sees a possibility in you before you see it yourself.
+That advice became a direction.
+And that direction became a career.
+It is strange how one sentence, given at the right moment, can alter the architecture of an entire life.`],
+['Speaking Up','HURT / SAY IT / OWN IT','Sometimes it is simply giving someone the information they need to treat you better.',`This person taught me that if something hurts, say it.
+Even if it seems small.
+Even if it is only one comment, one action, one little thing that someone may not even have realised was hurtful.
+People are not always intentionally cruel.
+Sometimes they simply don’t know.
+And if they don’t know, they cannot correct it.
+I learnt that speaking up is not always confrontation.
+Sometimes it is simply giving someone the information they need to treat you better.
+And perhaps more importantly, it is about owning your feelings instead of silently carrying them.`],
+['Observation','SOUND / MOVEMENT / LIGHT','Most of us are simply moving too quickly to notice.',`My cat.
+A tiny creature who taught me to slow down and observe.
+Cats notice everything.
+A sound.
+A movement.
+A change in light.
+A person entering a room.
+A bird outside a window.
+Watching my cat taught me that observation is a skill.
+The world is constantly giving us information.
+Most of us are simply moving too quickly to notice.`],
+['Taste','COMPOSITION / PROPORTION / RESTRAINT','Taste is difficult to teach. But it can be cultivated.',`This person taught me about taste.
+Not just what looks beautiful, but why something feels beautiful.
+Composition. Proportion. Restraint. Details.
+The ability to walk into a space, look at an object, see an outfit, notice a photograph—and understand that something works even before you can explain why.
+Taste is difficult to teach.
+But it can be cultivated.`],
+['Obsession','ALIGN / ORGANISE / PERFECT','It taught me something about precision.',`This person taught me about OCD.
+Not necessarily as a diagnosis or a condition, but as an almost obsessive relationship with details.
+The need to align things.
+To organise.
+To perfect.
+To notice what others might overlook.
+It taught me something about precision.
+Sometimes what looks like an unnecessary detail to someone else is exactly what makes the whole thing feel right to you.`],
+['Cooking Fast','CHOP / STIR / TASTE','Sometimes it simply needs to be made with attention.',`This person taught me how to cook quickly—and still make it delicious.
+But somewhere along the way, cooking became more than a skill.
+It became therapy.
+There is something comforting about chopping, stirring, seasoning, tasting and creating something from almost nothing.
+A meal doesn’t need to be elaborate.
+Sometimes it simply needs to be made with attention.`],
+['Being Rich','ENOUGH / SHARE / GENEROUS','Not simply to have money. But to have enough that you can share.',`This person taught me what it means to be rich.
+Not simply to have money.
+But to have enough that you can share.
+To enjoy what you have.
+To give without constantly calculating what you will lose.
+To live generously.
+To live a little like a king—not necessarily because you own a kingdom, but because you know how to make the people around you feel like they belong in one.`],
+['Being Street Smart','READ / ROOM / OPPORTUNITY','Confidence can sometimes arrive after the action, not before it.',`This person taught me that intelligence isn’t always academic.
+Sometimes you need to read a room.
+Read a person.
+Understand a situation.
+Know when to speak and when to remain silent.
+Know when to take the opportunity.
+And sometimes—
+fake it until you make it.
+Confidence can sometimes arrive after the action, not before it.`],
+['Protection','TRY / BELIEVE / DUA','When I succeed, their contribution exists inside that success too.',`This person taught me to protect the people I love.
+To try, even when I am not sure I will succeed.
+Because sometimes success is not only about what you gain.
+It is about what your success means to the people who stood beside you.
+Someone who cheered.
+Someone who motivated.
+Someone who helped.
+Someone who gave advice.
+Someone who simply believed.
+Someone who made a dua.
+I learnt that when I succeed, their contribution exists inside that success too.`],
+['Being Presentable','CARRY / SPEAK / SIT','Elegance is not always about clothes.',`This person taught me how to behave in public.
+How to carry myself.
+How to speak.
+How to sit at a table.
+How to use table manners.
+How to understand that the way you conduct yourself is part of the impression you leave behind.
+Elegance is not always about clothes.
+Sometimes it is simply knowing how to behave.`],
+['Letting Go','FORGIVE / FORGET / MOVE ON','It means it doesn’t get to control what happens next.',`This person taught me something difficult:
+Forgive.
+Forget.
+Move on.
+Not everything deserves a permanent room in your mind.
+Some things are meant to be lessons, not lifelong burdens.
+Letting go doesn’t mean what happened didn’t matter.
+It means it doesn’t get to control what happens next.`],
+['Repair','BROKEN / FIGURE OUT / TRY AGAIN','The repaired object becomes more meaningful because you know the story of how it was saved.',`This person taught me to repair things.
+Not immediately replace them.
+There is something beautiful about fixing something that is broken.
+Understanding how it came apart.
+Figuring out what went wrong.
+Trying again.
+And sometimes discovering that the repaired object becomes more meaningful because you know the story of how it was saved.`],
+['Selfless Love','UNCONDITIONAL / CHOSEN / GIVEN','Sometimes love, at its purest, is simply something you choose to give.',`This person taught me that love can be unconditional.
+You can love someone even when they don’t love you back in the same way.
+You can care without expecting an equal transaction.
+Not because you are weak.
+But because sometimes love, at its purest, is simply something you choose to give.`],
+['Hibernation','SLEEP / RECOVER / RETURN','Sometimes the most productive thing you can do is absolutely nothing.',`This person taught me the art of sleeping.
+Properly.
+Without guilt.
+There is something beautiful about disappearing from the world for a little while.
+Sleeping.
+Recovering.
+Recharging.
+Returning.
+Sometimes the most productive thing you can do is absolutely nothing.`],
+['Coffee','ORIGIN / ROAST / CULTURE','Even something as ordinary as a cup of coffee can have an entire world hidden inside it.',`This person introduced me to coffee.
+But coffee became much more than a drink.
+Its history.
+Its origins.
+Its cultures.
+Its varieties.
+The different ways people roast it, brew it, serve it and enjoy it.
+I learnt that even something as ordinary as a cup of coffee can have an entire world hidden inside it.`],
+['Exploring','PLACES / BOOKS / IDEAS','No syllabus. No teacher. No examination. Just curiosity.',`This person taught me to explore.
+Places.
+Books.
+Ideas.
+Skills.
+Cultures.
+Questions.
+They taught me that some of the most valuable things you learn are the things you discover by yourself.
+No syllabus.
+No teacher.
+No examination.
+Just curiosity.`],
+['Privacy','SOLITUDE / SPACE / SILENCE','Privacy is not loneliness.',`This person taught me that it is okay to disappear.
+To step away from everyone.
+To become unavailable for a while.
+To keep certain things for yourself.
+Privacy is not loneliness.
+Sometimes solitude is simply the space where you hear yourself think again.`],
+['Luxury','CRAFT / MATERIAL / THOUGHT','Luxury is often less about the price and more about the thought behind the object.',`This person taught me to appreciate luxury.
+Not merely expensive things.
+But craftsmanship.
+Materials.
+Details.
+Design language.
+Proportion.
+History.
+The feeling of something being made exceptionally well.
+I learnt that luxury is often less about the price and more about the thought behind the object.`],
+['Jugaad','IMPROVISE / ADAPT / MAKE DO','The real skill is knowing when to improvise and when a problem deserves a proper solution.',`Who taught me the art of jugaad.
+The ability to find a way when the ideal solution isn’t available.
+To work with what you have.
+To improvise.
+To adapt.
+To look at a problem and ask, “How can I make this work?”
+Sometimes, the budget is limited.
+Sometimes, the tools aren’t right.
+Sometimes, there is no time to wait for the perfect solution.
+And sometimes, you simply have to figure it out.
+I learnt that resourcefulness is a skill.
+It requires observation, creativity and the willingness to experiment.
+You look at what is available, understand what is possible and find a practical way forward.
+But jugaad is not just about making something work temporarily.
+There is a difference between a clever workaround and a solution that creates more problems later.
+The real skill is knowing when to improvise and when a problem deserves a proper solution.
+Because sometimes, limitations force you to think in ways you wouldn’t have considered otherwise.`],
+['Living a Simple Life','ENOUGH / SMALL THINGS / CALM','Perhaps simplicity is not about having less. It is about knowing what is enough.',`Who taught me the art of living a simple life.
+Not everything needs to be complicated.
+Not everything needs to be expensive.
+And not everything needs to be extraordinary to make you happy.
+Sometimes, it is the little things.
+A good meal.
+A peaceful day.
+A comfortable home.
+People you love.
+And the ability to enjoy what you already have instead of constantly chasing what you don’t.
+Perhaps simplicity is not about having less.
+It is about knowing what is enough.`],
+['Unity and Variety','DIFFERENT / CONNECTED / BELONG','Unity doesn’t mean uniformity.',`Who taught me the art of unity and variety.
+How different things can come together and still work beautifully.
+Different personalities.
+Different opinions.
+Different ideas.
+Different colours, forms and elements.
+Everything doesn’t have to be the same to belong together.
+Sometimes, it is the differences that make the whole thing interesting.
+I learnt that unity doesn’t mean uniformity.
+It means finding a connection between things that are different and making them feel like they belong.`],
+['Music','EXPERIENCE / CULTURE / COMMUNITY','Sometimes, one introduction can open the door to an entire world.',`Who introduced me to the world of music and, along with it, Burning Man.
+A world I might not have discovered in quite the same way on my own.
+They taught me that music is not just something you listen to.
+It can be an experience.
+A culture.
+A community.
+A way of expressing yourself.
+And sometimes, an introduction to an entirely different way of looking at life.
+I learnt that music can bring strangers together, create memories with people you may never meet again, and make you feel part of something much bigger than yourself.
+Sometimes, one introduction can open the door to an entire world.`],
+['Books','READ / COLLECT / DISCOVER','And sometimes, the right book finds you at exactly the right time.',`Who taught me the art of books.
+The joy of reading, collecting books, acquiring knowledge and discovering ideas that might never have crossed my mind otherwise.
+Books allow you to enter someone else’s world without having to leave your own.
+You can learn from people who lived centuries ago.
+Understand perspectives you have never experienced.
+Explore subjects you know absolutely nothing about.
+And sometimes find answers to questions you didn’t even know you had.
+I learnt that a book doesn’t always end when you reach the last page.
+Sometimes, an idea stays with you for years.
+Sometimes, a single sentence changes the way you think.
+And sometimes, the right book finds you at exactly the right time.`],
+['Games','STRATEGY / PATIENCE / PLAY','And sometimes, the best part isn’t even winning. It is the experience of playing.',`Who introduced me to the art of games.
+The fun of playing, the thrill of winning, the frustration of losing and the satisfaction of figuring something out.
+Games can teach you strategy, patience, observation and the ability to think a few steps ahead.
+They make you understand that every move has consequences.
+Sometimes you win because you planned well.
+Sometimes you lose because you overlooked something obvious.
+And sometimes, no matter how much you prepare, luck decides to play its part.
+But games also remind you that not everything has to be serious.
+Sometimes you can spend hours trying to beat a level, solve a puzzle or defeat someone simply because it is fun.
+And sometimes, the best part isn’t even winning.
+It is the experience of playing.`],
+['Listening','HEAR / REMEMBER / MAKE SPACE','Remember the little things they tell you.',`Who taught me the art of listening.
+Someone who listened to everything.
+How my day went.
+What happened at work.
+What made me happy.
+What upset me.
+My passions.
+My dreams.
+My ambitions.
+The random things I wanted to share and the things I couldn’t stop talking about.
+Someone who made space for all of it.
+I learnt that listening isn’t just about hearing someone speak.
+It is about being interested in their world, even when that world is completely different from yours.
+Sometimes, people don’t need you to solve their problems.
+They just need someone who genuinely wants to know how their day went.
+And perhaps one of the simplest ways of making someone feel loved is to remember the little things they tell you.`]
+];
+
+PP.push(
+['Giving and Helping','TIME / MONEY / KNOWLEDGE','Not every act of kindness needs an audience.',`Who taught me the art of giving and helping.
+To offer what I can, when I can, without always expecting something in return.
+Sometimes, helping means giving money.
+Sometimes, it means giving your time.
+Sometimes, it means sharing your knowledge, opening a door, offering advice or simply showing up when someone needs you.
+Not every act of kindness needs an audience.
+Not everything good you do needs to be announced.
+I learnt that you don’t have to be extraordinarily rich or successful to make a difference in someone’s life.
+Sometimes, what feels small to you can mean everything to someone else.
+And if you have the ability to make something a little easier for another person, why wouldn’t you?`],
+['Happiness','JOY / NOTICE / UNCERTAINTY','It is about noticing what is already good about it.',`Who taught me the art of happiness.
+The ability to find joy in life without waiting for everything to be perfect.
+Because there will always be something missing.
+Something to achieve.
+Something to fix.
+Something to worry about.
+If happiness depends on everything falling into place, perhaps we will spend our entire lives waiting for it.
+I learnt that happiness can exist alongside uncertainty.
+In a good conversation.
+A favourite meal.
+A new discovery.
+A familiar face.
+A quiet evening.
+Sometimes, happiness isn’t about changing your entire life.
+It is about noticing what is already good about it.`],
+['Ignorance','IGNORE / FOCUS / PEACE','Not everything deserves access to your mind.',`Who taught me the art of ignorance.
+Not ignorance as in refusing to learn or understand.
+But the ability to ignore what doesn’t deserve my attention.
+Every opinion doesn’t need a response.
+Every argument doesn’t need my participation.
+Every provocation doesn’t deserve my energy.
+There will always be people who misunderstand you, judge you or have something to say about the way you live.
+And sometimes, the most intelligent response is no response at all.
+I learnt that knowing what to pay attention to is important.
+But knowing what to ignore can be just as valuable.
+Not everything deserves access to your mind.`],
+['Carrying a Personality','PRESENCE / COMFORT / CHANGE','Perhaps the most interesting people are those who are still becoming themselves.',`Who taught me the art of carrying a personality.
+To have a presence of my own.
+To know what I like.
+What I believe in.
+What makes me laugh.
+What I find interesting.
+What I stand for.
+And what makes me different from everyone else.
+I learnt that having a personality isn’t about trying to be the most interesting person in the room.
+It is about being comfortable enough with yourself that you don’t need to become someone else to be accepted.
+You can be serious about some things and ridiculous about others.
+You can be knowledgeable without pretending to know everything.
+You can be confident without needing to prove it constantly.
+And you can change your mind without losing yourself.
+Perhaps the most interesting people are those who are still becoming themselves.`],
+['Function','FORM / USE / PURPOSE','Beauty and purpose should work together.',`Who taught me the art of function.
+That beauty isn’t enough if something doesn’t work.
+An object can look extraordinary.
+It can have beautiful proportions, expensive materials and the most carefully considered details.
+But if it doesn’t do what it is supposed to do, something is missing.
+I learnt to look beyond appearance.
+How does it work?
+Is it comfortable to use?
+Does it solve the problem?
+Does it make someone’s life easier?
+Does every design decision have a reason?
+This lesson goes beyond product design.
+People, too, can look impressive from the outside, but what matters is how they function in the real world.
+How they treat others.
+How they show up.
+How they handle responsibility.
+Because ultimately, whether we are designing a product or building a life, beauty and purpose should work together.`],
+['Affection','REMEMBER / CHECK IN / CARE','I thought of you. I remembered you. I care about you.',`Who taught me the art of affection.
+The little ways of showing someone that they matter.
+A hug.
+A thoughtful message.
+Remembering something they mentioned weeks ago.
+Checking whether they reached home safely.
+Sitting beside someone when they don’t feel like talking.
+Sometimes, affection is loud.
+Sometimes, it is quiet.
+Sometimes, it is expressed through words.
+And sometimes, it is simply doing something for someone because you know it will make them happy.
+I learnt that affection doesn’t always require grand gestures.
+It often lives in the smallest details.
+The things that say, without saying it directly:
+I thought of you.
+I remembered you.
+I care about you.
+And perhaps the most beautiful thing is learning how to express affection in a way the other person can actually feel.`],
+['Negotiating','LISTEN / FIRM / PATIENT','The trick is knowing the difference between compromising your position and compromising your principles.',`Who taught me the art of negotiating.
+That getting what you want isn’t always about demanding it.
+Sometimes, it is about listening.
+Understanding what the other person wants.
+Knowing what matters to you.
+Recognising what you can compromise on and what you cannot.
+I learnt that negotiation is not necessarily about defeating the other person.
+It is about finding a way forward.
+Sometimes you have to be firm.
+Sometimes you have to be patient.
+Sometimes you need to walk away.
+And sometimes, the best deal is the one where both people feel that they have gained something valuable.
+The trick is knowing the difference between compromising your position and compromising your principles.`],
+['Keeping Secrets','TRUST / SAFE / RESPECT','Sometimes, keeping quiet is one of the clearest ways to show respect.',`Who taught me the art of keeping secrets like a vault.
+That when someone trusts you with something personal, it is not yours to share.
+Not for entertainment.
+Not to impress someone.
+Not to become the most interesting person in a conversation.
+Some things are told to you because someone feels safe enough to tell you.
+And that safety comes with responsibility.
+I learnt that knowing something about someone doesn’t give you the right to reveal it.
+You can know a person’s fears, mistakes, struggles and private experiences without turning them into stories for someone else.
+Trust is built in conversations.
+But it is also built in the conversations you choose not to have.
+Sometimes, keeping quiet is one of the clearest ways to show respect.`],
+['Hosting','WELCOME / NOTICE / BELONG','It is remembered for how people felt while they were there.',`Who taught me the art of hosting.
+How to welcome people into a space and make them feel comfortable being there.
+It isn’t just about preparing food, arranging a table or making sure everything looks beautiful.
+It is about thinking of the people who are going to arrive.
+What will they need?
+Will they feel included?
+Will they have something to eat?
+Will they have someone to talk to?
+Will they feel comfortable enough to be themselves?
+I learnt that good hosting is a combination of preparation, generosity and attention.
+You notice the little things before someone has to ask.
+You make room for people.
+You bring different personalities together.
+And you create an environment where everyone feels like they belong.
+Because a beautiful gathering isn’t remembered only for what was served.
+It is remembered for how people felt while they were there.`],
+['Collecting','CURIOUS / KEEP / STORY','A record of your interests, your discoveries and the person you were when you found each piece.',`Who taught me the art of collecting.
+The joy of finding something interesting and deciding it is worth keeping.
+It could be books, gadgets, objects, photographs or something that most people would walk past without a second glance.
+I learnt that collecting isn’t always about owning more.
+Sometimes, it is about curiosity.
+The story behind an object.
+The reason it was made.
+The details that make it different.
+The memory of where you found it.
+Over time, a collection becomes more than a group of objects.
+It becomes a record of your interests, your discoveries and the person you were when you found each piece.
+Perhaps we collect things because we want to keep a little part of the world that made us feel something.`],
+['Dressing','COLOUR / SILHOUETTE / FIT','Clothes can communicate something before you have said a single word.',`Who taught me the art of dressing.
+That what you wear can be a form of expression.
+Clothes can communicate something before you have said a single word.
+A colour.
+A silhouette.
+A fabric.
+A fit.
+A detail that seems insignificant until you notice it.
+I learnt that dressing well isn’t necessarily about following trends or wearing expensive brands.
+It is about understanding what works for you.
+What makes you feel comfortable.
+What reflects your personality.
+What suits the occasion.
+And how different pieces can come together to create something that feels intentional.
+Sometimes, getting dressed is simply practical.
+Sometimes, it is creative.
+And sometimes, it is a way of showing the world a little more of who you are.`],
+['Minimalism','REMOVE / KEEP / MAKE SPACE','Sometimes, clarity comes from removing things rather than adding more.',`Who taught me the art of minimalism.
+The beauty of having less, but being more intentional about what remains.
+Removing what isn’t necessary.
+Keeping what serves a purpose.
+Making space for what matters.
+I learnt that minimalism isn’t simply about white walls, empty rooms or owning very few things.
+It is about decisions.
+Knowing what to include.
+Knowing what to leave out.
+Understanding when something adds value and when it only adds noise.
+In design, every element should have a reason to exist.
+Perhaps the same can be said about life.
+Not every commitment needs to be accepted.
+Not every possession needs to be acquired.
+Not every thought needs to be entertained.
+Sometimes, clarity comes from removing things rather than adding more.`],
+['Grief','ABSENCE / MEMORY / CARRY','Moving forward doesn’t mean leaving someone behind.',`Who taught me the art of grief.
+How to learn to live with someone who is no longer physically here.
+There is no straightforward way to prepare yourself for the absence of someone who was once part of your everyday life.
+Their voice.
+Their presence.
+The familiar things they did.
+The conversations you thought you would have again.
+And suddenly, there are memories where there used to be moments.
+I learnt that grief isn’t something you simply finish and move on from.
+Sometimes, you learn to carry it differently.
+You find ways to remember.
+You notice them in familiar places, old photographs, stories and little things that remind you of who they were.
+Life continues, even when a part of yours feels as though it has stopped.
+And slowly, you learn that moving forward doesn’t mean leaving someone behind.
+Sometimes, it means finding a way to carry their love with you.`],
+['Trust','CONSISTENT / HONEST / BRAVE','It is about allowing a relationship to exist without fear being in control of everything.',`Who taught me the art of trust.
+The willingness to believe in someone without needing to control every outcome.
+To allow people the space to be themselves.
+To believe their words, while also paying attention to their actions.
+I learnt that trust takes time to build.
+It grows through consistency.
+Through honesty.
+Through keeping promises.
+Through showing up when it matters.
+But trust also requires a little courage.
+Because no matter how carefully you choose someone, there is never a guarantee that you will never be disappointed.
+And perhaps that is what makes trust meaningful.
+You cannot build a genuine relationship while constantly expecting the other person to prove that they will never hurt you.
+Trust is not about ignoring reality.
+It is about allowing a relationship to exist without fear being in control of everything.`],
+['Truth','HONEST / WRONG / REAL','But I learnt that the truth gives you something to work with.',`Who taught me the art of truth.
+To be honest, even when it is uncomfortable.
+To acknowledge what happened rather than creating a more convenient version of it.
+To admit when I don’t know something.
+To accept when I am wrong.
+And to understand that the truth doesn’t always become easier simply because we avoid it.
+Sometimes, honesty can create difficult conversations.
+Sometimes, it can change relationships.
+Sometimes, it forces you to confront something about yourself that you would rather not see.
+But I learnt that the truth gives you something to work with.
+You can correct a mistake.
+You can make a better decision.
+You can rebuild something on a more honest foundation.
+Pretending may protect you for a moment.
+But eventually, you have to live with what is real.`],
+['Obsession','FASCINATION / DETAIL / INTENSITY','You improve because you cannot help trying again.',`Who taught me the art of obsession.
+The ability to become completely fascinated by something.
+To think about it when you wake up.
+To research it when you should probably be doing something else.
+To keep exploring long after everyone else has lost interest.
+Sometimes, it is a subject.
+Sometimes, it is a project.
+Sometimes, it is a new skill, an object, a hobby or an idea that refuses to leave your mind.
+I learnt that obsession can be a powerful source of knowledge.
+You notice things others overlook because you have spent so much time looking.
+You understand details because you keep asking questions.
+You improve because you cannot help trying again.
+But there is also a difference between being deeply interested in something and allowing it to consume everything else.
+Perhaps the real skill is learning how to use that intensity without losing yourself in it.`],
+['Simple Living, High Thinking','MODEST / AMBITIOUS / CURIOUS','You can live modestly without thinking small.',`Who taught me the art of simple living and high thinking.
+That the way you live doesn’t have to be extravagant for your thoughts to be ambitious.
+You can appreciate simple things and still dream of extraordinary possibilities.
+You can live modestly without thinking small.
+You can enjoy what you have while continuing to learn, question, imagine and grow.
+I learnt that intelligence doesn’t need to be displayed through possessions.
+And success doesn’t always need to be announced.
+There is something powerful about being content with the simple things while keeping your mind open to bigger ideas.
+To live without constantly needing to impress others.
+To think beyond your immediate circumstances.
+And to remember that the richness of a life cannot be measured only by what it owns.`],
+['Gratitude','REMEMBER / THANK / PASS FORWARD','Gratitude is more than saying thank you. It is remembering.',`Who taught me the art of gratitude.
+To remember the people who helped me get here.
+The person who gave me an opportunity.
+The person who encouraged me when I doubted myself.
+The person who taught me something useful.
+The person who stood beside me when things were difficult.
+The person who offered advice that I understood only years later.
+It is easy to look at where you are today and feel that you got there entirely through your own effort.
+But when you look back carefully, you begin to notice how many people contributed along the way.
+Some helped directly.
+Some opened doors.
+Some gave me the confidence to try.
+Some simply believed in me when I wasn’t sure I could do it.
+I learnt that gratitude is more than saying thank you.
+It is remembering.
+Remembering who helped.
+Remembering what they gave.
+And, when the opportunity comes, finding a way to pass that goodness forward.`],
+['Photography','LIGHT / MOMENT / MEMORY','Some moments deserve our full attention.',`Who taught me the art of photography and collecting memories.
+The ability to notice a moment and want to keep it.
+A place.
+A person.
+A meal.
+A journey.
+A gathering.
+An ordinary afternoon that might not seem important until years later.
+I learnt that photography isn’t only about taking a beautiful picture.
+It is about paying attention to what is happening around you.
+The light.
+The expression.
+The details.
+The feeling of being somewhere at a particular moment in time.
+Photographs allow us to return to moments that would otherwise exist only in our memories.
+They preserve faces, places and versions of ourselves that change as the years pass.
+But perhaps the most important thing is remembering to experience life while documenting it.
+Not every moment needs to be photographed.
+Some moments deserve our full attention.
+And sometimes, the best photograph is the one that reminds us how it felt to be there.`],
+['Mentoring','GUIDE / ENCOURAGE / ALLOW','The goal is not to create another version of yourself.',`Who taught me the art of mentoring.
+The difference between helping someone become better and trying to make them become you.
+It is easy to give advice based on your own experiences.
+To tell someone what worked for you.
+To suggest the path you would have taken.
+But another person’s journey is not necessarily supposed to look like yours.
+I learnt that good mentoring begins with understanding the person in front of you.
+Their strengths.
+Their interests.
+Their fears.
+Their ambitions.
+Their way of thinking.
+Sometimes, people need guidance.
+Sometimes, they need encouragement.
+Sometimes, they need someone to challenge their assumptions.
+And sometimes, they simply need the freedom to figure things out for themselves.
+The goal is not to create another version of yourself.
+It is to help someone discover what they are capable of becoming.`],
+['Procrastination','DELAY / BEGIN / FIRST STEP','I am still learning that motivation doesn’t always arrive before action.',`Who taught me the art of procrastination.
+Perhaps a chapter I shouldn’t be particularly proud of.
+The ability to know exactly what needs to be done and somehow find seventeen other things to do instead.
+A task that takes an hour suddenly becomes an entire day’s negotiation with myself.
+First, coffee.
+Then, perhaps a little research.
+Maybe I should organise my desk.
+Perhaps I need to think about the task a little more.
+And before I know it, the deadline is much closer than it was when I started.
+But procrastination has taught me something about myself.
+Sometimes, I delay things because they feel overwhelming.
+Sometimes, because I want them to be perfect.
+Sometimes, because I simply don’t feel like doing them.
+Knowing the difference matters.
+I am still learning that motivation doesn’t always arrive before action.
+Sometimes, you have to begin first.
+Even if you begin badly.
+Even if you begin reluctantly.
+Even if all you manage is the first small step.`],
+['Courage','STAND UP / TRY / WALK AWAY','Being courageous doesn’t mean you aren’t afraid.',`Who taught me the art of courage.
+Standing up when it would be easier to stay quiet.
+Trying when failure is a possibility.
+Speaking when your voice feels uncertain.
+Walking away when staying would be more comfortable.
+I learnt that courage doesn’t always look dramatic.
+Sometimes, it is a difficult conversation.
+Sometimes, it is asking for an opportunity.
+Sometimes, it is admitting that you need help.
+Sometimes, it is choosing a different path when everyone expects you to continue on the one you started.
+Being courageous doesn’t mean you aren’t afraid.
+It means fear doesn’t get to make every decision for you.
+And sometimes, the bravest thing you can do is simply take the next step without knowing exactly how everything will turn out.`],
+['Apologising','ADMIT / ACKNOWLEDGE / CHANGE','Sometimes, two simple words can be difficult to say. I was wrong.',`Who taught me the art of apologising.
+The ability to say, “I was wrong.”
+Without immediately explaining why.
+Without turning the conversation around.
+Without making the other person feel responsible for what I did.
+I learnt that apologising requires more than words.
+It requires understanding what happened, acknowledging the impact and being willing to do better.
+Sometimes, you may not have intended to hurt someone.
+But your intentions do not automatically erase how your actions affected them.
+A genuine apology allows you to take responsibility without treating every mistake as a verdict on your entire character.
+You can be a good person and still get things wrong.
+You can care about someone and still hurt them.
+What matters is whether you are willing to acknowledge it, learn from it and change the behaviour.
+Sometimes, two simple words can be difficult to say.
+I was wrong.
+But they can also be the beginning of making something right.`],
+['Humour','LAUGH / RELEASE / TOGETHER','Sometimes, it is simply the ability to recognise the absurdity of being human.',`Who taught me the art of humour.
+The ability to laugh when life gets ridiculous.
+Because sometimes, things go wrong in ways that would be almost impressive if they weren’t happening to you.
+Plans fail.
+People misunderstand each other.
+Technology stops working at the worst possible moment.
+And somehow, the situation becomes funnier the more you try to control it.
+I learnt that humour can make difficult moments a little easier to carry.
+It can bring people together.
+It can break the tension in a room.
+It can help us look at ourselves without taking ourselves too seriously.
+But humour also requires awareness.
+There is a difference between laughing with someone and making someone the joke.
+The best humour doesn’t always need a target.
+Sometimes, it is simply the ability to recognise the absurdity of being human.
+And to laugh at it together.`],
+['Reinvention','CHANGE / OUTGROW / BEGIN AGAIN','Sometimes, growth means allowing yourself to change.',`Who taught me the art of reinvention.
+The ability to become someone new without apologising for who I used to be.
+We change.
+Our interests change.
+Our ambitions change.
+Our understanding of the world changes.
+Something that once felt like the perfect direction may eventually stop feeling right.
+And sometimes, the person you worked so hard to become is no longer the person you want to be.
+I learnt that changing direction doesn’t automatically mean the previous version of you was a mistake.
+Perhaps that version gave you the experience, knowledge and confidence you needed to reach the next one.
+You can outgrow a career.
+Change your mind.
+Discover a new passion.
+Start again.
+You don’t have to remain loyal to an old version of yourself simply because other people remember you that way.
+Sometimes, growth means allowing yourself to change.`],
+['Giving Gifts','REMEMBER / NOTICE / UNDERSTAND','The most meaningful gifts are often the ones that make someone feel understood.',`Who taught me the art of giving gifts.
+That a thoughtful gift is not always about how much money you spend.
+Sometimes, it is about remembering a passing comment someone made months ago.
+Noticing something they love.
+Finding something that reminds you of them.
+Choosing something that feels personal rather than simply expensive.
+I learnt that a gift can say many things.
+I remembered.
+I paid attention.
+I know you.
+I thought this might make you happy.
+And perhaps that is what makes giving a gift so special.
+You are not simply handing someone an object.
+You are showing them that something about them stayed in your mind even when they weren’t around.
+The most meaningful gifts are often the ones that make someone feel understood.`],
+['Boundaries','NO / PEACE / SELF','I learnt that protecting my peace isn’t selfish.',`Who taught me the art of setting boundaries.
+That being a good person doesn’t mean being available to everyone, all the time.
+You can care about someone and still say no.
+You can help someone without taking responsibility for everything they go through.
+I learnt that protecting my peace isn’t selfish.
+Not every request needs to be accepted, and not every expectation needs to be fulfilled.
+Sometimes, boundaries are simply about caring for others without losing yourself in the process.`],
+['Patience','TIME / PROGRESS / TRUST','Just because something isn’t happening yet doesn’t mean nothing is happening.',`Who taught me the art of patience.
+That not everything happens when you want it to.
+Learning takes time.
+Trust takes time.
+Building something meaningful takes time.
+I learnt that just because something isn’t happening yet doesn’t mean nothing is happening.
+Sometimes, progress is invisible.
+Patience isn’t about sitting around and waiting for life to happen.
+It is about doing your part and allowing things the time they need.`],
+['Acceptance','RELEASE / REALITY / FORWARD','Sometimes, you have to stop arguing with reality and learn how to move forward.',`Who taught me the art of acceptance.
+That not everything will happen the way I imagined it.
+Some people will leave.
+Some plans will fail.
+Some questions will remain unanswered.
+I learnt that acceptance doesn’t mean giving up.
+It means understanding what I can change and what I cannot.
+I can wish things had been different without spending my life trying to rewrite them.
+Sometimes, you have to stop arguing with reality and learn how to move forward.`],
+['______','UNNAMED / OPEN / ALWAYS BECOMING','Because we are always becoming.',`Some lessons haven’t found their name yet.
+And perhaps that is the point.
+There are still people I haven’t met.
+Things I haven’t learnt.
+Mistakes I haven’t made.
+Places I haven’t explored.
+And versions of myself that haven’t existed yet.
+So perhaps this list should never really end.
+Because we are always becoming.
+And somewhere along the way, someone else will leave another little piece behind.`]
+);
+
+const $=s=>document.querySelector(s);
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const pad=n=>String(n).padStart(2,'0');
+const code2=t=>t.replace(/[^A-Za-z]/g,'').slice(0,2).toUpperCase()||'--';
+const nm=t=>t==='______'?'<span class="blank"></span>':esc(t.toUpperCase());
+const scribble=c=>`<svg viewBox="0 0 300 460" role="img" aria-label="Brush scribble"><g filter="url(#brush)" fill="none" stroke="${c}" stroke-linecap="round" stroke-linejoin="round"><path d="M96 30L214 104L82 186L226 262L70 344L206 424" stroke-width="30"/><path d="M52 84Q206 40 248 176Q58 224 192 316Q40 372 150 448" stroke-width="12"/><path d="M118 148H244M70 292H220" stroke-width="22"/></g><path d="M150 12C296 120 6 220 252 300S84 436 184 454" fill="none" stroke="${c}" stroke-width="1.6" stroke-dasharray="1.5 5" stroke-linecap="round"/></svg>`;
+const ruler=k=>{let s='';for(let i=0;i<60;i++){const cur=i===k-1,x=(2+i*4.95).toFixed(2);s+=`<line x1="${x}" x2="${x}" y1="${cur?0:4}" y2="10" stroke="${cur?'#b23a30':'#8d8d93'}" stroke-width="${cur?1.5:.6}"/>`}return `<svg class="ruler" viewBox="0 0 300 10" preserveAspectRatio="none" aria-hidden="true">${s}</svg>`};
+const PREF=["I don't think we become who we are entirely by ourselves.","There are pieces of other people everywhere in me.","Some taught me things intentionally. Some probably don't even know they taught me anything. Some gave me a habit. Some gave me a way of thinking. Some gave me a strange obsession. Some gave me a value.","And some simply showed me something once that never left.","I want to remember them—not necessarily by their names, but by the little pieces of myself that came from them."];
+const paras=a=>a.map(l=>`<p>${esc(l)}</p>`).join('');
+const textPage=(k,pg)=>{const [t,,,body]=PP[k-1],L=body.split('\n').filter(Boolean);return `<div class="page left"><i class="edge"></i><div class="t"><div class="code">Person ${pad(k)}</div><i class="dash"></i><div class="of">THE ART OF</div><h2>${nm(t)}</h2><div class="body fit ${L.length>9?'two':'one'}">${paras(L)}</div></div><span class="pn">${pad(pg)}</span></div>`};
+const artPage=(k,pg)=>{const [t,kw,q]=PP[k-1];return `<div class="page right"><i class="edge"></i><div class="blk">${ART[k]}</div><div class="cap"><b>${t==='______'?'':code2(t)+' — '}${kw}</b><span>FIG. ${pad(k)}</span></div><p class="q">${esc(q)}</p>${ruler(k)}<span class="pn">${pad(pg)}</span></div>`};
+const pages=[];
+pages.push(()=>`<div class="page right cover"><div class="scr">${scribble('#111113')}</div><div class="ct"><h1>THE PEOPLE<br>WHO MADE ME</h1><i class="dash"></i><div class="by">Sania S</div><p>A collection of the things I learned from the people I met.</p></div><div class="foot">selected lessons /<br>fragments /<br>people</div></div>`);
+pages.push(()=>`<div class="page left"><i class="edge"></i><div class="t tp"><div class="code">The People Who Made Me</div><i class="dash"></i><h2 class="big">A BOOK ABOUT THE PEOPLE WE CARRY WITH US</h2></div><span class="pn">02</span></div>`);
+pages.push(()=>`<div class="page right p3"><i class="edge"></i><div class="scr">${scribble('#111113')}</div><div class="cap"><b>Fig. 00 — The people we carry</b></div><span class="pn">03</span></div>`);
+pages.push(()=>`<div class="page left dark"><i class="edge"></i><div class="scr sm">${scribble('#eeeef0')}</div><div class="t pf"><div class="code">Before the pages</div><i class="dash"></i><h2>The People Who Made Me</h2><div class="body fit one">${paras(PREF)}</div></div><span class="pn">04</span></div>`);
+pages.push(()=>`<div class="page right idx"><i class="edge"></i><div class="t"><div class="code">The people</div><i class="dash"></i><h2>PEOPLE</h2><p class="tag">A collection of the things I learned from the people I met.</p><ol class="grid fit">${PP.map((p,i)=>`<li><i>${pad(i+1)}</i><span>${nm(p[0])}</span></li>`).join('')}</ol></div><span class="pn">05</span></div>`);
+PP.forEach((_,i)=>{const k=i+1;pages.push(()=>textPage(k,4+2*k));pages.push(()=>artPage(k,5+2*k))});
+pages.push(()=>`<div class="page left colo"><i class="edge"></i><div class="t"><p>The People Who Made Me<br>By Sania S<br><br>Selected lessons /<br>fragments / people</p></div><span class="pn">126</span></div>`);
+pages.push(()=>`<div class="page right backc"><div class="scr">${scribble('#eeeef0')}</div></div>`);
+
+function fitIn(r){r.querySelectorAll('.fit').forEach(b=>{const pg=b.closest('.page');let s=1;pg.style.setProperty('--s',1);const bad=()=>b.scrollHeight>b.clientHeight+1||b.scrollWidth>b.clientWidth+1;while(bad()&&s>.5){s-=.03;pg.style.setProperty('--s',s.toFixed(2))}})}
+const root=$('#app');let n=0,leaves=[],MAXN=0,mode='';
+const MQ=matchMedia('(max-width:420px)');
+const nav=h=>`<div class="nav"><button id="prev" aria-label="Previous page">←</button><span class="hint"><span id="lbl"></span></span><button id="next" aria-label="Next page">→</button></div><div class="nav" style="font-size:10px;margin-top:-4px"><span class="hint">${h}</span></div>`;
+function fill(j){const l=leaves[j];if(!l||l.dataset.f)return;l.dataset.f=1;l.children[0].innerHTML=pages[2*j]();if(l.children[1]&&pages[2*j+1])l.children[1].innerHTML=pages[2*j+1]();fitIn(l)}
+function warm(){for(let j=Math.max(0,n-3);j<=Math.min(leaves.length-1,n+4);j++)fill(j)}
+function curM(){const p=$('.pager'),w=p.querySelector('.pg').offsetWidth+16;return Math.max(0,Math.min(pages.length-1,Math.round(p.scrollLeft/w)))}
+function fillM(i){const g=document.querySelectorAll('.pager .pg');for(let k=Math.max(0,i-3);k<=Math.min(g.length-1,i+3);k++){if(!g[k].dataset.f){g[k].dataset.f=1;g[k].innerHTML=pages[k]();fitIn(g[k])}}}
+function label(){const el=$('#lbl');if(!el)return;if(mode==='m'){const i=curM();el.textContent=i===0?'Cover':i===pages.length-1?'Back cover':'Page '+(i+1)+' / '+pages.length;$('#prev').disabled=i<=0;$('#next').disabled=i>=pages.length-1;fillM(i)}
+ else{el.textContent=n===0?'Cover':n===MAXN?'Back cover':'Pages '+(2*n)+'–'+(2*n+1);$('#prev').disabled=n===0;$('#next').disabled=n===MAXN;warm()}}
+function setZ(){leaves.forEach((l,j)=>{if(l.dataset.busy)return;l.style.zIndex=j<n?j+1:300-j})}
+function shift(){const b=$('.book');if(b)b.style.transform=n===0?'translateX(-25%)':'none'}
+function go(d){if(mode==='m'){const p=$('.pager');p.scrollBy({left:d*(p.querySelector('.pg').offsetWidth+16),behavior:'smooth'});return}
+ const j=d>0?n:n-1;if(j<0||j>=MAXN)return;const l=leaves[j];fill(j);l.dataset.busy=1;l.style.zIndex=300-j;l.classList.toggle('flipped',d>0);n+=d;shift();setTimeout(()=>{delete l.dataset.busy;setZ()},950);label()}
+function buildBook(){mode='d';const nl=Math.ceil(pages.length/2);MAXN=nl-1;leaves=[];
+ root.innerHTML='<div class="stage"><div class="book" id="book"></div></div>'+nav('Drag a page, tap its edge, or use ← →');const book=$('#book');
+ for(let j=0;j<nl;j++){const l=document.createElement('div');l.className='leaf';l.innerHTML='<div class="face"></div>'+(pages[2*j+1]?'<div class="face back"></div>':'');book.appendChild(l);leaves.push(l)}
+ n=0;setZ();shift();drag(book)}
+function buildMobile(){mode='m';root.innerHTML='<div class="pager" tabindex="0" aria-label="Book pages">'+pages.map(()=>'<div class="pg"></div>').join('')+'</div>'+nav('Swipe to turn the page');
+ const p=$('.pager');let t;p.addEventListener('scroll',()=>{clearTimeout(t);t=setTimeout(label,60)},{passive:true});fillM(0)}
+function drag(book){let st=null;
+ book.addEventListener('pointerdown',e=>{const r=book.getBoundingClientRect(),right=e.clientX>r.left+r.width/2;
+  if(right&&n>=MAXN||!right&&n<=0)return;st={x:e.clientX,right,j:right?n:n-1,p:0,moved:false,w:r.width/2,rx:e.clientX-r.left,rw:r.width};});
+ window.addEventListener('pointermove',e=>{if(!st)return;const dx=e.clientX-st.x;if(!st.moved&&Math.abs(dx)<8)return;
+  if(!st.moved){st.moved=true;const l=leaves[st.j];fill(st.j);l.dataset.busy=1;l.style.zIndex=300-st.j;l.style.transition='none'}
+  const p=Math.max(0,Math.min(1,st.right?-dx/st.w:dx/st.w));st.p=p;leaves[st.j].style.transform=`rotateY(${st.right?-180*p:-180+180*p}deg)`;});
+ window.addEventListener('pointerup',()=>{if(!st)return;const s=st;st=null;const l=leaves[s.j];
+  if(!s.moved){const edge=s.right?(s.rx>s.rw*.78):(s.rx<s.rw*.22);if(edge)go(s.right?1:-1);return}
+  l.style.transition='';l.style.transform='';const commit=s.p>.3;
+  if(commit){l.classList.toggle('flipped',s.right);n+=s.right?1:-1;shift()}
+  setTimeout(()=>{delete l.dataset.busy;setZ()},950);label();});}
+root.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.id==='prev')go(-1);if(b.id==='next')go(1)});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown'){go(1);e.preventDefault()}else if(e.key==='ArrowLeft'||e.key==='PageUp'){go(-1);e.preventDefault()}});
+let lastMode=null,rt;
+function init(){const m=MQ.matches?'m':'d';if(m!==lastMode){lastMode=m;(m==='m'?buildMobile:buildBook)();label()}else fitIn(document)}
+addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(init,150)});
+init();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>fitIn(document));
+
+</script>
+
+</body></html>
