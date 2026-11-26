@@ -99,10 +99,11 @@ img{display:block;max-width:100%;height:auto}
 @media (hover:hover){.il:hover li{opacity:.38;transition:opacity .2s}.il li:hover{opacity:1}}
 .split{display:grid;grid-template-columns:4fr 8fr;gap:clamp(20px,5vw,80px);align-items:start}
 @media (max-width:860px){.split{grid-template-columns:1fr}}
+.stat-row.n3{grid-template-columns:repeat(3,1fr)}
 .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:28px}
 .stat-row div{border-top:1px solid var(--line);padding-top:10px;min-width:0}
 .stat-row strong{display:block;font-weight:400;font-size:clamp(1.8rem,3.6vw,2.8rem);letter-spacing:-.04em;line-height:1}
-@media (max-width:700px){.stat-row{grid-template-columns:repeat(2,1fr);row-gap:24px}}
+@media (max-width:700px){.stat-row,.stat-row.n3{grid-template-columns:repeat(2,1fr);row-gap:24px}}
 
 /* about */
 .portrait{width:min(100%,300px);aspect-ratio:1;border-radius:50%;object-fit:cover;filter:grayscale(1)}
@@ -366,10 +367,9 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--ink);outline-off
         <div style="display:grid;gap:8px"><h3 class="h3">Teaching</h3><p class="body mute">AI integration across undergraduate and postgraduate design programmes at ISDI Parsons, Atlas SkillTech University, including M.Des Design Futures and MBA Design Management &amp; Strategic Thinking.</p></div>
       </div>
     </div>
-    <div class="stat-row">
+    <div class="stat-row n3">
       <div><strong>5</strong><span class="lab">Years teaching</span></div>
       <div><strong>5</strong><span class="lab">Granted Indian patents</span></div>
-      <div><strong>650+</strong><span class="lab">Learners on SWAYAM</span></div>
       <div><strong>15</strong><span class="lab">Student patent initiatives mentored</span></div>
     </div>
   </section>
@@ -397,7 +397,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--ink);outline-off
         <li><span class="lab">Research interests</span><div class="tags"><span>Generative AI in design</span><span>Digital product innovation</span><span>Design pedagogy &amp; curriculum</span><span>Immersive media</span><span>AI ethics in creativity</span><span>Sustainable design education</span></div></li>
         <li><span class="lab">Leadership</span><div style="display:grid;gap:6px"><span>Faculty Lead, Design Collective: student events, industry engagement, exhibitions, IPR, research and competitions.</span><span>Faculty Development Programmes on AI in higher education: generative AI tools, prompt engineering, AI-assisted pedagogy.</span><span>Industry and academic partnerships with Autodesk and Adobe for student certification, software access and mentorship.</span></div></li>
         <li><span class="lab">Mentoring</span><span>Postgraduate students in patent filing, research and publication, portfolios and capstone projects: about 15 patent initiatives and 4 research papers.</span></li>
-        <li><span class="lab">Online courses</span><div style="display:grid;gap:6px"><span><b>Design with AI</b>, SWAYAM national MOOC (ongoing): lectures, handbook and question bank, reaching 650+ learners.</span><span><b>Future Forward with AI</b>, 6-week, 3-credit SWAYAM MOOC with 25 to 30 videos from prompt engineering to multimodal workflows.</span><span><b>AI for Business: Harnessing Generative AI for Innovation &amp; Growth</b>, 15-week, 35-hour course for the BBA and MBA online programmes.</span></div></li>
+        <li><span class="lab">Online courses</span><div style="display:grid;gap:6px"><span><b>AI for Business: Harnessing Generative AI for Innovation &amp; Growth</b>, 15-week, 35-hour course for the BBA and MBA online programmes.</span></div></li>
         <li><span class="lab">Recognition</span><div style="display:grid;gap:6px"><span>Session Best Presenter Award, 8th International Conference on the Future of Education, Bali (2025)</span><span>AVGC 40 Under 40 Award with Autodesk, for excellence in animation (2023)</span><span>Best Presenter Award, Atlas International Design Conference, Mumbai (2023)</span></div></li>
         <li><span class="lab">Patents</span><span>Granted Indian utility and design patents: Bottle Holder, Drone Pad, Smoke Filtration Device, Pet House with Treat Dispenser, Speaker Design.</span></li>
       </ul>
@@ -569,14 +569,13 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--ink);outline-off
           <div class="cvh"><h2>Summary</h2><span class="lab">Mumbai, India</span></div>
           <div class="sum">
             <p class="lead" style="max-width:60ch">Assistant Professor and multidisciplinary design educator with 5 years of academic and 3 years of industry experience across product design, AI-integrated design education, digital product innovation and immersive media.</p>
-            <p class="body mute">Experienced in designing postgraduate curricula, developing national-level MOOCs, mentoring research and intellectual property initiatives, and integrating generative AI into design pedagogy. Author of conference publications, recipient of international academic awards, and holder of multiple Indian design and utility patents.</p>
+            <p class="body mute">Experienced in designing postgraduate curricula, mentoring research and intellectual property initiatives, and integrating generative AI into design pedagogy. Author of conference publications, recipient of international academic awards, and holder of multiple Indian design and utility patents.</p>
             <p class="seek">Seeking doctoral research in AI-augmented design education, adaptive learning and human-centred educational technologies.</p>
           </div>
-          <div class="stat-row cv-stats">
+          <div class="stat-row n3 cv-stats">
             <div><strong>5</strong><span class="lab">Years academic</span></div>
             <div><strong>3</strong><span class="lab">Years industry</span></div>
             <div><strong>5</strong><span class="lab">Granted Indian patents</span></div>
-            <div><strong>650+</strong><span class="lab">SWAYAM learners</span></div>
           </div>
           <div style="padding-top:26px"><p class="lab" style="padding-bottom:10px">Research interests</p>
             <div class="tags"><span>Generative AI in design</span><span>Digital product innovation</span><span>Design pedagogy &amp; curriculum development</span><span>Immersive media</span><span>AI ethics in creativity</span><span>Sustainable design education</span></div></div>
@@ -682,8 +681,6 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--ink);outline-off
         <section class="cvs" id="cv-courses">
           <div class="cvh"><h2>Course development &amp; e-learning</h2></div>
           <ul class="tl">
-            <li><span class="lab">Ongoing</span><div><h4>Design with AI</h4><p class="mute">Course creator, SWAYAM national MOOCs (Government of India platform)</p><ul class="bl"><li>End-to-end MOOC content: structured video lectures, a course handbook and a question bank for self-assessment and examinations, reaching more than 650 students.</li><li>Aligned with UGC and AICTE SWAYAM guidelines for national-level open access education.</li></ul></div></li>
-            <li><span class="lab">6 weeks &middot; 3 credits</span><div><h4>Future Forward with AI</h4><p class="mute">Course creator and subject matter expert, Atlas SkillTech University, offered through SWAYAM</p><ul class="bl"><li>About 25 to 30 recorded videos covering generative AI, prompt engineering, text and presentation AI, image generation, 3D AI, audio and video generation and multimodal workflows, ending in end-to-end AI projects.</li></ul></div></li>
             <li><span class="lab">15 weeks &middot; 35 hours</span><div><h4>AI for Business: Harnessing Generative AI for Innovation &amp; Growth</h4><p class="mute">Subject matter expert, BBA and MBA online programmes, Atlas SkillTech University, ISME</p><ul class="bl"><li>Developed, curated and recorded the course: curriculum, learning objectives, exercises, business case studies, assessments and rubrics for distance and blended delivery.</li></ul></div></li>
           </ul>
         </section>
