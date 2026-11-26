@@ -11,20 +11,20 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
 <style>
 /* Visual system: a text-first index. White ground, one neutral grotesk, sentence-case type,
    numbered nav with superscript indices, plain "Title - descriptor" lists, a theme toggle,
    and one object to handle: a prism of projects you turn by dragging. */
 :root{
-  --bg:#FFFFFF; --ink:#111111; --mute:#707070; --line:#E6E6E6; --plate:#F4F4F4; --accent:#111111;
+  --bg:#FFFFFF; --ink:#1B1B1B; --mute:#6B6B6B; --line:#E4E4E4; --plate:#F3F3F3; --accent:#DB3A3E; --red:#DB3A3E; --black:#1B1B1B;
   --blend:multiply; --r:2px;
   --f:'Inter','Helvetica Neue',Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){--bg:#0C0C0C;--ink:#EDEDED;--mute:#8C8C8C;--line:#262626;--plate:#161616;--accent:#EDEDED;--blend:normal;color-scheme:dark}
+  :root:not([data-theme="light"]){--bg:#1D1D1D;--ink:#F5F5F5;--mute:#9A9A9A;--line:#343434;--plate:#262626;--accent:#DB3A3E;--blend:normal;color-scheme:dark}
 }
-:root[data-theme="dark"]{--bg:#0C0C0C;--ink:#EDEDED;--mute:#8C8C8C;--line:#262626;--plate:#161616;--accent:#EDEDED;--blend:normal;color-scheme:dark}
+:root[data-theme="dark"]{--bg:#1D1D1D;--ink:#F5F5F5;--mute:#9A9A9A;--line:#343434;--plate:#262626;--accent:#DB3A3E;--blend:normal;color-scheme:dark}
 
 *{box-sizing:border-box}
 html{scroll-behavior:auto}
@@ -288,6 +288,55 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--ink);outline-off
 /* footer */
 .ftr{margin-top:clamp(56px,8vw,120px);border-top:1px solid var(--line);padding-top:18px;padding-bottom:30px;display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---- v5: poster-tile system (red / black / white, heavy grotesk, full-stop titles, isometric type) ---- */
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:2px solid var(--red)}
+.disp,.h1,.h2{font-weight:700}
+.h1{letter-spacing:-.045em}
+.logo{font-weight:800;letter-spacing:-.03em}
+.logo::after{content:".";color:var(--red)}
+.nav sup{color:var(--red);font-weight:700}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--red)}
+.idx-h{border-bottom:2px solid var(--ink)}
+.idx-h h2,.cvh h2{font-weight:800;text-transform:uppercase;letter-spacing:-.005em}
+.idx-h h2::after,.cvh h2::after{content:".";color:var(--red)}
+.cvh{border-bottom-width:2px}
+.il .t{font-weight:700}
+.il .n{color:var(--red);font-weight:500}
+.il li:hover .ar{color:var(--red)}
+.btn{border-width:1.5px}
+.btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.btn.solid{background:var(--red);border-color:var(--red);color:#fff}
+.btn.solid:hover{background:transparent;color:var(--red)}
+.pface{background:#fff}
+
+/* tiles: square posters, meta label, bold title with full stop, quiet subtitle */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,24px);padding-top:clamp(40px,6vw,80px)}
+.tile{position:relative;aspect-ratio:1;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;padding:clamp(16px,2.2vw,28px);color:#fff;background:var(--black);box-shadow:0 14px 34px rgba(0,0,0,.16);transition:transform .25s ease}
+.tile:hover{transform:translateY(-4px)}
+.tile.red{background:var(--red)}
+.tile.wh{background:#fff;color:var(--black);box-shadow:0 14px 34px rgba(0,0,0,.16),inset 0 0 0 1px var(--line)}
+.tile.bk{box-shadow:0 14px 34px rgba(0,0,0,.2),inset 0 0 0 1px #3A3A3A}
+.tile .m{font-size:.72rem;letter-spacing:.04em;opacity:.7}
+.tile h3{font-weight:800;font-size:clamp(1.05rem,1.6vw,1.3rem);letter-spacing:-.01em;line-height:1.1;margin-top:clamp(10px,1.6vw,18px)}
+.tile p{font-size:.82rem;line-height:1.3;opacity:.85;margin-top:5px}
+.tile svg{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+@media (max-width:760px){.tiles{grid-template-columns:1fr}.tile{max-width:480px}}
+
+/* stats become square poster tiles */
+.stat-row div{border-top:0;padding:clamp(12px,1.6vw,18px);aspect-ratio:1;display:flex;flex-direction:column-reverse;justify-content:space-between;background:var(--black);color:#fff;overflow:hidden}
+.stat-row div:nth-child(3n+1){background:var(--red)}
+.stat-row div:nth-child(3n+3){background:#fff;color:var(--black);box-shadow:inset 0 0 0 1px var(--line)}
+.stat-row div:nth-child(3n+2){box-shadow:inset 0 0 0 1px #3A3A3A}
+.stat-row .lab{color:inherit;opacity:.8;font-size:.76rem;line-height:1.3}
+.stat-row strong{font-weight:800;letter-spacing:-.05em;font-size:clamp(2.4rem,5vw,4.2rem)}
+
+/* book covers in the same three colours */
+.cv1{background:#fff;color:var(--black);box-shadow:inset 0 0 0 1px var(--line)}
+.cv2{background:var(--black);color:#fff}
+.cv3{background:var(--red);color:#fff}
+.cover .t{font-weight:800}
 </style>
 
 <header class="hdr">
@@ -327,6 +376,13 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--ink);outline-off
       </div>
     </div>
     <div class="stage-meta"><span>drag to turn &middot; click to open</span><span id="turn-cap">01 Snuggo</span></div>
+  </section>
+
+
+  <section class="wrap tiles" aria-label="At a glance">
+    <a class="tile red" href="#portfolio"><span class="m">saniashaikh.com</span><h3>Objects.</h3><p>Product design</p><svg viewBox="0 0 400 400" aria-hidden="true" focusable="false"><defs><g id="isw"><text transform="translate(62 296) rotate(-30) skewX(30) scale(1 .864)" font-size="72" font-weight="800" letter-spacing="-2">OBJECTS</text></g></defs><use href="#isw" y="16" fill="#111"/><use href="#isw" y="15" fill="#111"/><use href="#isw" y="14" fill="#111"/><use href="#isw" y="13" fill="#111"/><use href="#isw" y="12" fill="#111"/><use href="#isw" y="11" fill="#111"/><use href="#isw" y="10" fill="#111"/><use href="#isw" y="9" fill="#111"/><use href="#isw" y="8" fill="#111"/><use href="#isw" y="7" fill="#111"/><use href="#isw" y="6" fill="#111"/><use href="#isw" y="5" fill="#111"/><use href="#isw" y="4" fill="#111"/><use href="#isw" y="3" fill="#111"/><use href="#isw" y="2" fill="#111"/><use href="#isw" y="1" fill="#111"/><use href="#isw" fill="#fff"/></svg></a>
+    <a class="tile wh" href="#about"><span class="m">saniashaikh.com</span><h3>Teaching.</h3><p>Design education and AI</p><svg viewBox="0 0 400 400" aria-hidden="true" focusable="false"><defs><path id="rp1" d="M-30 330 C 60 190, 150 380, 230 280 S 350 190, 440 250"/><path id="rp2" d="M-30 392 C 70 290, 160 410, 250 330 S 360 260, 440 300"/></defs><use href="#rp1" x="7" y="9" fill="none" stroke="#E3E3E3" stroke-width="28"/><use href="#rp2" x="7" y="9" fill="none" stroke="#E3E3E3" stroke-width="28"/><use href="#rp1" fill="none" stroke="#1B1B1B" stroke-width="28"/><use href="#rp2" fill="none" stroke="#DB3A3E" stroke-width="28"/><text font-size="10.5" font-weight="700" letter-spacing="1.3" fill="#fff" dy="3.7"><textPath href="#rp1">TEACHING &middot; RESEARCH &middot; AI IN DESIGN &middot; TEACHING &middot; RESEARCH &middot; AI IN DESIGN &middot; TEACHING &middot; RESEARCH &middot; AI IN DESIGN &middot; </textPath></text><text font-size="10.5" font-weight="700" letter-spacing="1.3" fill="#fff" dy="3.7"><textPath href="#rp2">TEACHING &middot; RESEARCH &middot; AI IN DESIGN &middot; TEACHING &middot; RESEARCH &middot; AI IN DESIGN &middot; TEACHING &middot; RESEARCH &middot; AI IN DESIGN &middot; </textPath></text></svg></a>
+    <a class="tile bk" href="#cv"><span class="m">saniashaikh.com</span><h3>Research.</h3><p>Generative AI in design</p><svg viewBox="0 0 400 400" aria-hidden="true" focusable="false"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DB3A3E"/><stop offset=".6" stop-color="#DB3A3E" stop-opacity=".35"/><stop offset="1" stop-color="#DB3A3E" stop-opacity="0"/></linearGradient><filter id="ab" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.2"/></filter></defs><g filter="url(#ab)"><path d="M-20 400 V215 A45 45 0 0 1 70 215 V400 Z" fill="url(#ag)"/><path d="M95 400 V300 A45 45 0 0 1 185 300 V400 Z" fill="url(#ag)"/><path d="M210 400 V215 A45 45 0 0 1 300 215 V400 Z" fill="url(#ag)"/><path d="M325 400 V300 A45 45 0 0 1 415 300 V400 Z" fill="url(#ar)"/></g></svg></a>
   </section>
 
   <section class="wrap idx">
